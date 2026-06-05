@@ -163,7 +163,6 @@ function ElPuente() {
               <p className="lt-body-sm" style={{ margin: 0, color: 'rgba(255,255,255,0.48)' }}>Cada estudiante recibe al Luteacher ideal, mientras que los Luteachers fortalecen habilidades que los acompañarán toda su vida y que el mercado laboral requiere.</p>
             </div>
           </div>
-gi
         </div>
 
         {/* ── EPIC CIRCLE ── */}
