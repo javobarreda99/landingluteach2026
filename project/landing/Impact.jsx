@@ -438,6 +438,20 @@ function Luteachers() {
   var setAnim = stAnim[1];
   var activeDot = idx % team.length;
 
+  // divisor=6 → 3 cards visible (desktop); divisor=2 → 1 card visible (mobile)
+  var stDiv = React.useState(function() { return window.innerWidth <= 768 ? 2 : 6; });
+  var divisor = stDiv[0];
+  var setDivisor = stDiv[1];
+  React.useEffect(function() {
+    function onResize() {
+      var d = window.innerWidth <= 768 ? 2 : 6;
+      setDivisor(d);
+      setIdx(0);
+    }
+    window.addEventListener('resize', onResize);
+    return function() { window.removeEventListener('resize', onResize); };
+  }, []);
+
   React.useEffect(function() {
     var timer = setInterval(function() {
       setAnim(true);
@@ -473,12 +487,12 @@ function Luteachers() {
         <div style={{
           display: 'flex',
           width: '200%',
-          transform: 'translateX(calc(-' + idx + ' * 100% / 6))',
+          transform: 'translateX(calc(-' + idx + ' * 100% / ' + divisor + '))',
           transition: anim ? 'transform 0.7s cubic-bezier(0.4,0,0.2,1)' : 'none'
         }}>
           {looped.map(function(item, i) {
             return (
-              <div key={i} style={{ flex: 'none', width: 'calc(100% / 6)', padding: '0 8px' }}>
+              <div key={i} style={{ flex: 'none', width: 'calc(100% / ' + divisor + ')', padding: '0 8px' }}>
                 <div style={{ borderRadius: 20, overflow: 'hidden', background: 'rgba(255,255,255,.04)', border: '1px solid rgba(255,255,255,.08)', display: 'flex', flexDirection: 'column' }}>
                   <div style={{ position: 'relative', height: 360, overflow: 'hidden', cursor: 'pointer' }}>
                     <img

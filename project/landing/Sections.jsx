@@ -487,7 +487,7 @@ function Partners() {
         onDragStart={(e) => e.preventDefault()}
       >
         {loop.map((name, i) => (
-          <div key={name + i} style={{
+          <div key={name + i} className="partner-card" style={{
             flex: 'none', width: 260, minHeight: 140, display: 'grid', placeItems: 'center',
             padding: '24px 28px', background: 'var(--canvas-2)', border: '1px solid var(--sand-200)',
             borderRadius: 'var(--r-lg)', userSelect: 'none',
