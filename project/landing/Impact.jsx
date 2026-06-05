@@ -433,19 +433,41 @@ function Luteachers() {
   var idx = stIdx[0];
   var setIdx = stIdx[1];
 
+  var stMob = React.useState(function() { return window.innerWidth <= 768; });
+  var isMob = stMob[0];
+  var setIsMob = stMob[1];
+
+  React.useEffect(function() {
+    function onResize() { setIsMob(window.innerWidth <= 768); }
+    window.addEventListener('resize', onResize);
+    return function() { window.removeEventListener('resize', onResize); };
+  }, []);
+
+  var stDir = React.useState(1);
+  var dir = stDir[0];
+  var setDir = stDir[1];
+
   React.useEffect(function() {
     var t = setInterval(function() {
+      setDir(1);
       setIdx(function(i) { return (i + 1) % team.length; });
     }, 10000);
     return function() { clearInterval(t); };
   }, []);
 
-  var item = team[idx];
+  function goNext() { setDir(1); setIdx(function(i) { return (i + 1) % team.length; }); }
+  function goPrev() { setDir(-1); setIdx(function(i) { return (i - 1 + team.length) % team.length; }); }
+
+  var perView = isMob ? 1 : 3;
+  var animCls = dir > 0 ? 'lt-sr' : 'lt-sl';
+  var cards = Array.from({ length: perView }, function(_, k) {
+    return team[(idx + k) % team.length];
+  });
 
   return (
     <section id="luteachers" style={{ padding: '104px 0 80px', background: 'var(--ink-900)', color: '#fff', overflow: 'hidden' }}>
       <div className="lt-wrap">
-        <div style={{ maxWidth: 760, marginBottom: 48 }}>
+        <div style={{ maxWidth: 760, marginBottom: 52 }}>
           <div className="lt-overline" style={{ color: 'var(--orange-400)' }}>De las aulas al impacto</div>
           <h2 className="lt-h1" style={{ color: '#fff', margin: '16px 0 0', fontSize: 46, letterSpacing: '-0.02em' }}>
             Enseñar es una de las experiencias que más acelera el crecimiento profesional.
@@ -454,42 +476,58 @@ function Luteachers() {
             Muchos de nuestros Luteachers hoy destacan en empresas, universidades y organizaciones de primer nivel.
           </p>
         </div>
+      </div>
 
-        <div style={{ borderRadius: 20, overflow: 'hidden', background: 'rgba(255,255,255,.04)', border: '1px solid rgba(255,255,255,.08)', display: 'flex', maxWidth: 900 }}>
-          <div style={{ position: 'relative', width: 300, minWidth: 300, flex: 'none' }}>
-            <img src={item.img} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', minHeight: 420 }} />
-            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(to top, rgba(0,0,0,.5) 0%, transparent 50%)', pointerEvents: 'none' }}></div>
-            <span style={{ position: 'absolute', top: 14, left: 14, background: 'rgba(255,255,255,.14)', WebkitBackdropFilter: 'blur(8px)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,.2)', color: '#fff', borderRadius: 99, padding: '4px 12px', fontSize: 12, fontWeight: 600 }}>
-              Luteacher · {item.years}
-            </span>
-            <button onClick={function() { setIdx(function(i) { return (i - 1 + team.length) % team.length; }); }}
-              style={{ position: 'absolute', left: 12, bottom: 20, width: 44, height: 44, borderRadius: '50%', border: '1.5px solid rgba(255,255,255,.35)', background: 'rgba(14,18,30,.8)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
-              <Icon name="chevron-left" size={20} stroke={2.5} />
-            </button>
-            <button onClick={function() { setIdx(function(i) { return (i + 1) % team.length; }); }}
-              style={{ position: 'absolute', right: 12, bottom: 20, width: 44, height: 44, borderRadius: '50%', border: 'none', background: 'var(--grad-brand)', boxShadow: '0 4px 18px rgba(242,135,5,.45)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
-              <Icon name="chevron-right" size={20} stroke={2.5} />
-            </button>
-          </div>
-          <div style={{ flex: 1, padding: '32px 36px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <h3 style={{ fontWeight: 700, fontSize: 22, color: '#fff', margin: '0 0 4px', letterSpacing: '-0.01em' }}>{item.name}</h3>
-            <div style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 16 }}>{item.carrera}</div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, paddingBottom: 20, borderBottom: '1px solid rgba(255,255,255,.08)', marginBottom: 20 }}>
-              <Icon name="briefcase" size={13} stroke={2} style={{ color: 'var(--orange-400)', flex: 'none' }} />
-              <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--orange-300)' }}>{item.ahora}</span>
-            </div>
-            <Icon name="quote" size={16} stroke={1.5} style={{ color: 'var(--orange-400)', marginBottom: 10 }} />
-            <p style={{ fontSize: 14, lineHeight: 1.7, color: 'rgba(255,255,255,.7)', fontStyle: 'italic', margin: 0 }}>{item.quote}</p>
-          </div>
+      <div style={{ padding: '0 24px' }}>
+        <div style={{ maxWidth: 1240, margin: '0 auto', display: 'flex', gap: 16 }}>
+          {cards.map(function(item, k) {
+            return (
+              <div key={String(idx) + '_' + String(k)} className={animCls} style={{ flex: 1, borderRadius: 20, overflow: 'hidden', background: 'rgba(255,255,255,.04)', border: '1px solid rgba(255,255,255,.08)', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ position: 'relative', height: 320, overflow: 'hidden' }}>
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform .45s ease' }}
+                    onMouseEnter={function(e) { e.currentTarget.style.transform = 'scale(1.06)'; }}
+                    onMouseLeave={function(e) { e.currentTarget.style.transform = 'scale(1)'; }}
+                  />
+                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(to top, rgba(0,0,0,.55) 0%, transparent 55%)', pointerEvents: 'none' }}></div>
+                  <span style={{ position: 'absolute', top: 14, left: 14, background: 'rgba(255,255,255,.14)', WebkitBackdropFilter: 'blur(8px)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,.2)', color: '#fff', borderRadius: 99, padding: '4px 12px', fontSize: 12, fontWeight: 600 }}>Luteacher · {item.years}</span>
+                </div>
+                <div style={{ padding: '20px 22px 24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <h3 style={{ fontWeight: 700, fontSize: 18, color: '#fff', margin: '0 0 3px', letterSpacing: '-0.01em' }}>{item.name}</h3>
+                  <div style={{ fontSize: 13, color: 'rgba(255,255,255,.38)', marginBottom: 12 }}>{item.carrera}</div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 7, paddingBottom: 14, borderBottom: '1px solid rgba(255,255,255,.07)', marginBottom: 14 }}>
+                    <Icon name="briefcase" size={13} stroke={2} style={{ color: 'var(--orange-400)', flex: 'none' }} />
+                    <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--orange-300)' }}>{item.ahora}</span>
+                  </div>
+                  <div style={{ flex: 1 }}>
+                    <Icon name="quote" size={14} stroke={1.5} style={{ color: 'var(--orange-400)', marginBottom: 6 }} />
+                    <p style={{ fontSize: 13, lineHeight: 1.65, color: 'rgba(255,255,255,.58)', fontStyle: 'italic', margin: 0 }}>"{item.quote}"</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
+      </div>
 
-        <div style={{ display: 'flex', gap: 8, marginTop: 24 }}>
+      <div className="lt-wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 28 }}>
+        <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
           {team.map(function(_, i) {
             return (
               <button key={i} onClick={function() { setIdx(i); }}
                 style={{ height: 8, width: i === idx ? 28 : 8, borderRadius: 99, background: i === idx ? 'var(--orange-400)' : 'rgba(255,255,255,.22)', border: 'none', cursor: 'pointer', padding: 0, transition: 'all .3s ease' }}></button>
             );
           })}
+        </div>
+        <div style={{ display: 'flex', gap: 10 }}>
+          <button onClick={goPrev} style={{ width: 44, height: 44, borderRadius: '50%', background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.14)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
+            <Icon name="chevron-left" size={20} stroke={2.5} />
+          </button>
+          <button onClick={goNext} style={{ width: 44, height: 44, borderRadius: '50%', background: 'var(--grad-brand)', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
+            <Icon name="chevron-right" size={20} stroke={2.5} />
+          </button>
         </div>
       </div>
     </section>
