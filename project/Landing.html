@@ -41,6 +41,11 @@
   /* Hamburger hidden on desktop, shown when nav-links collapse */
   .nav-hamburger { display: none; }
   @media (max-width: 960px) { .nav-links { display:none !important; } .nav-hamburger { display: flex !important; } }
+  /* Luteachers carousel animations */
+  @keyframes ltSlideR { from { opacity:0; transform:translateX(48px);  } to { opacity:1; transform:translateX(0); } }
+  @keyframes ltSlideL { from { opacity:0; transform:translateX(-48px); } to { opacity:1; transform:translateX(0); } }
+  .lt-sr { animation: ltSlideR .42s cubic-bezier(.4,0,.2,1) both; }
+  .lt-sl { animation: ltSlideL .42s cubic-bezier(.4,0,.2,1) both; }
 
   /* ═══════════════════════════════════════
      RESPONSIVE — MOBILE (≤ 768px)

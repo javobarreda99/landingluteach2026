@@ -163,7 +163,7 @@ function ElPuente() {
               <p className="lt-body-sm" style={{ margin: 0, color: 'rgba(255,255,255,0.48)' }}>Cada estudiante recibe al Luteacher ideal, mientras que los Luteachers fortalecen habilidades que los acompañarán toda su vida y que el mercado laboral requiere.</p>
             </div>
           </div>
-
+gi
         </div>
 
         {/* ── EPIC CIRCLE ── */}
@@ -470,19 +470,24 @@ function Luteachers() {
     visible.push({ item: team[(slide.idx + j) % team.length], uid: slide.gen * 10 + j });
   }
 
-  var btnBase = { width: 48, height: 48, borderRadius: '50%', border: 'none', cursor: 'pointer',
+  var btnShared = { width: 48, height: 48, borderRadius: '50%', border: 'none', cursor: 'pointer',
     display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff',
     position: 'absolute', top: '38%', transform: 'translateY(-50%)', zIndex: 10,
     transition: 'opacity .2s, background .2s' };
+  var btnPrev = { width: btnShared.width, height: btnShared.height, borderRadius: btnShared.borderRadius,
+    border: '1.5px solid rgba(255,255,255,.18)', cursor: 'pointer', display: 'flex',
+    alignItems: 'center', justifyContent: 'center', color: '#fff', position: 'absolute',
+    top: '38%', transform: 'translateY(-50%)', zIndex: 10, transition: 'opacity .2s, background .2s',
+    left: 8, background: 'rgba(14,18,30,.82)', boxShadow: '0 4px 20px rgba(0,0,0,.5)',
+    backdropFilter: 'blur(8px)' };
+  var btnNext = { width: btnShared.width, height: btnShared.height, borderRadius: btnShared.borderRadius,
+    border: 'none', cursor: 'pointer', display: 'flex',
+    alignItems: 'center', justifyContent: 'center', color: '#fff', position: 'absolute',
+    top: '38%', transform: 'translateY(-50%)', zIndex: 10, transition: 'opacity .2s, background .2s',
+    right: 8, background: 'var(--grad-brand)', boxShadow: '0 4px 24px rgba(242,135,5,.5)' };
 
   return (
     <section id=”luteachers” style={{ padding: '104px 0 80px', background: 'var(--ink-900)', color: '#fff', overflow: 'hidden' }}>
-      <style>{`
-        @keyframes ltSlideR { from { opacity:0; transform:translateX(48px);  } to { opacity:1; transform:translateX(0); } }
-        @keyframes ltSlideL { from { opacity:0; transform:translateX(-48px); } to { opacity:1; transform:translateX(0); } }
-        .lt-sr { animation: ltSlideR .42s cubic-bezier(.4,0,.2,1) both; }
-        .lt-sl { animation: ltSlideL .42s cubic-bezier(.4,0,.2,1) both; }
-      `}</style>
 
       <div className=”lt-wrap”>
         <div style={{ maxWidth: 760, marginBottom: 52 }}>
@@ -501,9 +506,7 @@ function Luteachers() {
 
         {/* ← prev */}
         <button onClick={goPrev}
-          style={Object.assign({}, btnBase, { left: 8,
-            background: 'rgba(14,18,30,.82)', boxShadow: '0 4px 20px rgba(0,0,0,.5)',
-            border: '1.5px solid rgba(255,255,255,.18)', backdropFilter: 'blur(8px)' })}
+          style={btnPrev}
           onMouseEnter={function(e){ e.currentTarget.style.background='rgba(255,255,255,.14)'; }}
           onMouseLeave={function(e){ e.currentTarget.style.background='rgba(14,18,30,.82)'; }}>
           <Icon name=”chevron-left” size={22} stroke={2.5} />
@@ -524,7 +527,7 @@ function Luteachers() {
                     style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform .45s ease' }}
                     onMouseEnter={function(e){ e.currentTarget.style.transform='scale(1.06)'; }}
                     onMouseLeave={function(e){ e.currentTarget.style.transform='scale(1)'; }} />
-                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 55%)', pointerEvents: 'none' }} />
+                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 55%)', pointerEvents: 'none' }}></div>
                   <span style={{ position: 'absolute', top: 14, left: 14,
                     background: 'rgba(255,255,255,.14)', backdropFilter: 'blur(8px)',
                     border: '1px solid rgba(255,255,255,.2)', color: '#fff',
@@ -551,8 +554,7 @@ function Luteachers() {
 
         {/* → next */}
         <button onClick={goNext}
-          style={Object.assign({}, btnBase, { right: 8,
-            background: 'var(--grad-brand)', boxShadow: '0 4px 24px rgba(242,135,5,.5)' })}
+          style={btnNext}
           onMouseEnter={function(e){ e.currentTarget.style.opacity='.82'; }}
           onMouseLeave={function(e){ e.currentTarget.style.opacity='1'; }}>
           <Icon name=”chevron-right” size={22} stroke={2.5} />
