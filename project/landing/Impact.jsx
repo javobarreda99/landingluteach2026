@@ -423,149 +423,152 @@ function QuienesSon() {
 
 function Luteachers() {
   var team = [
-    { img: 'assets/luteacher-lucia.png', name: 'Lucía Llerena', years: '2020 – 2022', carrera: 'Ingeniera Química', ahora: 'Máster en Maastricht University', quote: 'Ser Luteacher me enseñó algo que ninguna clase me había dado antes: si no puedes explicar una idea compleja de forma simple, todavía no la entiendes del todo. Esa habilidad terminó convirtiéndose en una de las más importantes en mi desarrollo profesional. Desde entonces, no solo mejoré mi forma de aprender, sino también de pensar. Hoy esa base me acompaña en cada proyecto que lidero, y me ha abierto nuevas oportunidades, como cursar actualmente una maestría en economía circular en Maastricht".' },
-    { img: 'assets/luteacher-marco.png', name: 'Marco Córdova', years: '2021 – 2023', carrera: 'Ingeniera Ambiental', ahora: 'Cofundador de Natek', quote: 'Ingresé a Luteach mientras estudiaba Ingeniería Ambiental en UTEC, buscando una oportunidad para compartir conocimientos. Con el tiempo descubrí que enseñar era mucho más que explicar conceptos: era aprender a escuchar, comunicar y liderar. Esta experiencia fortaleció habilidades que luego fueron clave en mi trabajo como investigador, gestor de proyectos y cofundador de Natek Systems. Hoy sigo aplicando las herramientas que desarrollé en Luteach para coordinar equipos, presentar ideas y transformar desafíos complejos en soluciones concretas. Fue una experiencia que marcó mi formación tanto profesional como personal.' },
-    { img: 'assets/luteacher-fernanda.png', name: 'Fernanda Matallana', years: '2021 – 2023', carrera: 'Ingeniera Civil', ahora: 'Ingeniera en Ausenco', quote: 'Mi paso por Luteach fue una experiencia que me marcó académica y profesionalmente. Ser Luteacher me desafió a descomponer ideas complejas en conceptos simples y concretos, asegurándome de que el alumno realmente lo entendiera. Fue ahí donde me apropié de una idea que me acompaña hasta hoy en día: “si puedes explicarle algo a un niño pequeño, entonces verdaderamente dominas el tema”. Hoy, trabajando en Ausenco, aplico ese mismo enfoque en mi día a día en una casa de ingeniería de alto nivel, ya sea entendiendo alcances complejos, colaborando con equipos o enfrentando problemas técnicos. Luteach no solo me hizo mejor estudiante, me hizo mejor profesional.' },
-    { img: 'assets/luteacher-alberto.png', name: 'Alberto García', years: '2019 – 2021', carrera: 'Ingeniera Mecánica', ahora: 'Ingeniero de Innovación en NEXA Resources', quote: 'Ser parte de Luteach fue clave en mi formación. Empecé enseñando mientras era estudiante y eso no solo me ayudó a mantener el primer puesto de mi carrera, sino a entender de verdad lo que aprendía. Explicar a otros me obligó a profundizar, ordenar mis ideas y desarrollar habilidades que hoy son esenciales en mi vida profesional. Hoy lidero proyectos de innovación en NEXA, y estoy seguro de que gran parte de ese crecimiento viene de las horas que pasé enseñando. Luteach no solo me ayudó a estudiar mejor, me ayudó a convertirme en el profesional que soy hoy.' },
-    { img: 'assets/luteacher-valeria.png', name: 'Valeria Abad', years: '2019 – 2022', carrera: 'Ingeniera Mecánica', ahora: 'Ingeniera en Lima Airport Partners', quote: 'Ingresé a Luteach inicialmente para generar un ingreso adicional durante mi etapa universitaria, pero terminé llevándome mucho más que eso. Como ex Luteacher, descubrí el valor de la empatía y la capacidad de explicar conceptos complejos de forma sencilla, acompañando a estudiantes que atravesaban los mismos desafíos que yo había vivido. Esta experiencia fortaleció mis habilidades de comunicación, liderazgo y trabajo con personas, competencias que posteriormente fueron clave en mi desarrollo profesional. Gracias a ello pude integrarme y coordinar con éxito equipos multidisciplinarios y profesionales de amplia experiencia durante mi participación en el proyecto de ampliación del Nuevo Aeropuerto Internacional Jorge Chávez, donde trabajé por más de dos años y medio. Luteach no solo me permitió enseñar, sino también desarrollar habilidades humanas que siguen siendo fundamentales en mi carrera como ingeniera y como persona.' },
+    { img: 'assets/luteacher-lucia.png', name: 'Lucía Llerena', years: '2020 – 2022', carrera: 'Ingeniera Química', ahora: 'Máster en Maastricht University', quote: 'Ser Luteacher me enseñó algo que ninguna clase me había dado antes: si no puedes explicar una idea compleja de forma simple, todavía no la entiendes del todo. Esa habilidad terminó convirtiéndose en una de las más importantes en mi desarrollo profesional. Desde entonces, no solo mejoré mi forma de aprender, sino también de pensar. Hoy esa base me acompaña en cada proyecto que lidero, y me ha abierto nuevas oportunidades, como cursar actualmente una maestría en economía circular en Maastricht.' },
+    { img: 'assets/luteacher-marco.png', name: 'Marco Córdova', years: '2021 – 2023', carrera: 'Ingeniero Ambiental', ahora: 'Cofundador de Natek', quote: 'Ingresé a Luteach mientras estudiaba Ingeniería Ambiental en UTEC, buscando una oportunidad para compartir conocimientos. Con el tiempo descubrí que enseñar era mucho más que explicar conceptos: era aprender a escuchar, comunicar y liderar. Esta experiencia fortaleció habilidades que luego fueron clave en mi trabajo como investigador, gestor de proyectos y cofundador de Natek Systems.' },
+    { img: 'assets/luteacher-fernanda.png', name: 'Fernanda Matallana', years: '2021 – 2023', carrera: 'Ingeniera Civil', ahora: 'Ingeniera en Ausenco', quote: 'Mi paso por Luteach fue una experiencia que me marcó académica y profesionalmente. Ser Luteacher me desafió a descomponer ideas complejas en conceptos simples y concretos. Fue ahí donde me apropié de una idea que me acompaña hasta hoy: “si puedes explicarle algo a un niño pequeño, entonces verdaderamente dominas el tema”. Hoy aplico ese mismo enfoque en mi día a día en Ausenco.' },
+    { img: 'assets/luteacher-alberto.png', name: 'Alberto García', years: '2019 – 2021', carrera: 'Ingeniero Mecánico', ahora: 'Ingeniero de Innovación en NEXA Resources', quote: 'Ser parte de Luteach fue clave en mi formación. Empecé enseñando mientras era estudiante y eso no solo me ayudó a mantener el primer puesto de mi carrera, sino a entender de verdad lo que aprendía. Hoy lidero proyectos de innovación en NEXA, y estoy seguro de que gran parte de ese crecimiento viene de las horas que pasé enseñando.' },
+    { img: 'assets/luteacher-valeria.png', name: 'Valeria Abad', years: '2019 – 2022', carrera: 'Ingeniera Mecánica', ahora: 'Ingeniera en Lima Airport Partners', quote: 'Ingresé a Luteach para generar un ingreso adicional, pero terminé llevándome mucho más. Descubrí el valor de la empatía y la capacidad de explicar conceptos complejos de forma sencilla. Esta experiencia fortaleció mis habilidades de comunicación, liderazgo y trabajo con personas — competencias clave en mi participación en la ampliación del Aeropuerto Jorge Chávez.' },
   ];
-  var looped = team.concat(team);
-  var stIdx = React.useState(0);
-  var idx = stIdx[0];
-  var setIdx = stIdx[1];
-  var stAnim = React.useState(true);
-  var anim = stAnim[0];
-  var setAnim = stAnim[1];
-  var activeDot = idx % team.length;
 
-  // divisor=6 → 3 cards visible (desktop); divisor=2 → 1 card visible (mobile)
-  var stDiv = React.useState(function() { return window.innerWidth <= 768 ? 2 : 6; });
-  var divisor = stDiv[0];
-  var setDivisor = stDiv[1];
+  /* ── state: idx always 0‥team.length-1, gen increments on each nav to trigger animation ── */
+  var st = React.useState({ idx: 0, gen: 0, dir: 1 });
+  var slide = st[0];
+  var setSlide = st[1];
+
+  var stMob = React.useState(function() { return window.innerWidth <= 900; });
+  var isMob = stMob[0];
+  var setIsMob = stMob[1];
+
   React.useEffect(function() {
-    function onResize() {
-      var d = window.innerWidth <= 768 ? 2 : 6;
-      setDivisor(d);
-      setIdx(0);
-    }
-    window.addEventListener('resize', onResize);
-    return function() { window.removeEventListener('resize', onResize); };
+    function fn() { setIsMob(window.innerWidth <= 900); }
+    window.addEventListener('resize', fn);
+    return function() { window.removeEventListener('resize', fn); };
   }, []);
 
-  // Prevents rapid clicks from stacking transitions and breaking the loop
-  var navLock = React.useRef(false);
+  /* auto‑advance every 12 s */
+  React.useEffect(function() {
+    var t = setInterval(function() {
+      setSlide(function(s) { return { idx: (s.idx + 1) % team.length, gen: s.gen + 1, dir: 1 }; });
+    }, 12000);
+    return function() { clearInterval(t); };
+  }, []);
+
   function goNext() {
-    if (navLock.current) return;
-    navLock.current = true;
-    setAnim(true);
-    setIdx(function(i) { return i + 1; });
-    setTimeout(function() { navLock.current = false; }, 800);
+    setSlide(function(s) { return { idx: (s.idx + 1) % team.length, gen: s.gen + 1, dir: 1 }; });
   }
   function goPrev() {
-    if (navLock.current) return;
-    navLock.current = true;
-    setAnim(false);
-    setIdx(function(i) { return (i - 1 + team.length) % team.length; });
-    setTimeout(function() { navLock.current = false; }, 150);
+    setSlide(function(s) { return { idx: (s.idx - 1 + team.length) % team.length, gen: s.gen + 1, dir: -1 }; });
   }
   function goTo(i) {
-    navLock.current = false;
-    setAnim(true);
-    setIdx(i);
+    setSlide(function(s) { return { idx: i, gen: s.gen + 1, dir: i >= s.idx ? 1 : -1 }; });
   }
 
-  React.useEffect(function() {
-    var timer = setInterval(function() {
-      if (!navLock.current) {
-        setAnim(true);
-        setIdx(function(i) { return i + 1; });
-      }
-    }, 10000);
-    return function() { clearInterval(timer); };
-  }, []);
+  /* build visible cards for this frame */
+  var perView = isMob ? 1 : 3;
+  var visible = [];
+  for (var j = 0; j < perView; j++) {
+    visible.push({ item: team[(slide.idx + j) % team.length], uid: slide.gen * 10 + j });
+  }
 
-  React.useEffect(function() {
-    if (idx >= team.length) {
-      var t = setTimeout(function() {
-        setAnim(false);
-        setIdx(0);
-        navLock.current = false;
-      }, 720);
-      return function() { clearTimeout(t); };
-    }
-  }, [idx]);
+  var btnBase = { width: 48, height: 48, borderRadius: '50%', border: 'none', cursor: 'pointer',
+    display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff',
+    position: 'absolute', top: '38%', transform: 'translateY(-50%)', zIndex: 10,
+    transition: 'opacity .2s, background .2s' };
 
   return (
-    <section id="luteachers" style={{ padding: '104px 0 80px', background: 'var(--ink-900)', color: '#fff', overflow: 'hidden' }}>
-      <div className="lt-wrap">
+    <section id=”luteachers” style={{ padding: '104px 0 80px', background: 'var(--ink-900)', color: '#fff', overflow: 'hidden' }}>
+      <style>{`
+        @keyframes ltSlideR { from { opacity:0; transform:translateX(48px);  } to { opacity:1; transform:translateX(0); } }
+        @keyframes ltSlideL { from { opacity:0; transform:translateX(-48px); } to { opacity:1; transform:translateX(0); } }
+        .lt-sr { animation: ltSlideR .42s cubic-bezier(.4,0,.2,1) both; }
+        .lt-sl { animation: ltSlideL .42s cubic-bezier(.4,0,.2,1) both; }
+      `}</style>
+
+      <div className=”lt-wrap”>
         <div style={{ maxWidth: 760, marginBottom: 52 }}>
-          <div className="lt-overline" style={{ color: 'var(--orange-400)' }}>De las aulas al impacto</div>
-          <h2 className="lt-h1" style={{ color: '#fff', margin: '16px 0 0', fontSize: 46, letterSpacing: '-0.02em' }}>
+          <div className=”lt-overline” style={{ color: 'var(--orange-400)' }}>De las aulas al impacto</div>
+          <h2 className=”lt-h1” style={{ color: '#fff', margin: '16px 0 0', fontSize: 46, letterSpacing: '-0.02em' }}>
             Enseñar es una de las experiencias que más acelera el crecimiento profesional.
           </h2>
-          <p className="lt-body-lg" style={{ color: 'rgba(255,255,255,.6)', marginTop: 16, maxWidth: 600 }}>
+          <p className=”lt-body-lg” style={{ color: 'rgba(255,255,255,.6)', marginTop: 16, maxWidth: 600 }}>
             Muchos de nuestros Luteachers hoy destacan en empresas, universidades y organizaciones de primer nivel.
           </p>
         </div>
       </div>
-      <div style={{ overflow: 'hidden', padding: '0 24px' }}>
-        <div style={{
-          display: 'flex',
-          width: '200%',
-          transform: 'translateX(calc(-' + idx + ' * 100% / ' + divisor + '))',
-          transition: anim ? 'transform 0.7s cubic-bezier(0.4,0,0.2,1)' : 'none'
-        }}>
-          {looped.map(function(item, i) {
+
+      {/* ── Card strip with overlaid arrows ── */}
+      <div style={{ position: 'relative', padding: '0 20px' }}>
+
+        {/* ← prev */}
+        <button onClick={goPrev}
+          style={Object.assign({}, btnBase, { left: 8,
+            background: 'rgba(14,18,30,.82)', boxShadow: '0 4px 20px rgba(0,0,0,.5)',
+            border: '1.5px solid rgba(255,255,255,.18)', backdropFilter: 'blur(8px)' })}
+          onMouseEnter={function(e){ e.currentTarget.style.background='rgba(255,255,255,.14)'; }}
+          onMouseLeave={function(e){ e.currentTarget.style.background='rgba(14,18,30,.82)'; }}>
+          <Icon name=”chevron-left” size={22} stroke={2.5} />
+        </button>
+
+        {/* cards */}
+        <div style={{ display: 'flex', gap: 16, padding: '0 44px' }}>
+          {visible.map(function(v) {
+            var item = v.item;
+            var cls = slide.dir >= 0 ? 'lt-sr' : 'lt-sl';
             return (
-              <div key={i} style={{ flex: 'none', width: 'calc(100% / ' + divisor + ')', padding: '0 8px' }}>
-                <div style={{ borderRadius: 20, overflow: 'hidden', background: 'rgba(255,255,255,.04)', border: '1px solid rgba(255,255,255,.08)', display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ position: 'relative', height: 360, overflow: 'hidden', cursor: 'pointer' }}>
-                    <img
-                      src={item.img}
-                      alt={item.name}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform .45s ease' }}
-                      onMouseEnter={function(e) { e.currentTarget.style.transform = 'scale(1.07)'; }}
-                      onMouseLeave={function(e) { e.currentTarget.style.transform = 'scale(1)'; }}
-                    />
-                    <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(to top, rgba(0,0,0,.55) 0%, transparent 55%)', pointerEvents: 'none' }}></div>
-                    <span style={{ position: 'absolute', top: 14, left: 14, background: 'rgba(255,255,255,.14)', WebkitBackdropFilter: 'blur(8px)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,.2)', color: '#fff', borderRadius: 99, padding: '4px 12px', fontSize: 12, fontWeight: 600 }}>
-                      Luteacher · {item.years}
-                    </span>
+              <div key={v.uid} className={cls}
+                style={{ flex: 1, minWidth: 0, borderRadius: 20, overflow: 'hidden',
+                  background: 'rgba(255,255,255,.04)', border: '1px solid rgba(255,255,255,.08)',
+                  display: 'flex', flexDirection: 'column' }}>
+                <div style={{ position: 'relative', height: 340, overflow: 'hidden' }}>
+                  <img src={item.img} alt={item.name}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform .45s ease' }}
+                    onMouseEnter={function(e){ e.currentTarget.style.transform='scale(1.06)'; }}
+                    onMouseLeave={function(e){ e.currentTarget.style.transform='scale(1)'; }} />
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 55%)', pointerEvents: 'none' }} />
+                  <span style={{ position: 'absolute', top: 14, left: 14,
+                    background: 'rgba(255,255,255,.14)', backdropFilter: 'blur(8px)',
+                    border: '1px solid rgba(255,255,255,.2)', color: '#fff',
+                    borderRadius: 99, padding: '4px 12px', fontSize: 12, fontWeight: 600 }}>
+                    Luteacher · {item.years}
+                  </span>
+                </div>
+                <div style={{ padding: '20px 22px 24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <h3 style={{ fontWeight: 700, fontSize: 18, color: '#fff', margin: '0 0 3px', letterSpacing: '-0.01em' }}>{item.name}</h3>
+                  <div style={{ fontSize: 13, color: 'rgba(255,255,255,.38)', marginBottom: 12 }}>{item.carrera}</div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 7, paddingBottom: 14, borderBottom: '1px solid rgba(255,255,255,.07)', marginBottom: 14 }}>
+                    <Icon name=”briefcase” size={13} stroke={2} style={{ color: 'var(--orange-400)', flex: 'none' }} />
+                    <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--orange-300)' }}>{item.ahora}</span>
                   </div>
-                  <div style={{ padding: '20px 22px 24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                    <h3 style={{ fontWeight: 700, fontSize: 18, color: '#fff', margin: '0 0 3px', letterSpacing: '-0.01em' }}>{item.name}</h3>
-                    <div style={{ fontSize: 13, color: 'rgba(255,255,255,.38)', marginBottom: 12 }}>{item.carrera}</div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 7, paddingBottom: 14, borderBottom: '1px solid rgba(255,255,255,.07)', marginBottom: 14 }}>
-                      <Icon name="briefcase" size={13} stroke={2} style={{ color: 'var(--orange-400)', flex: 'none' }} />
-                      <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--orange-300)' }}>{item.ahora}</span>
-                    </div>
-                    <div style={{ flex: 1 }}>
-                      <Icon name="quote" size={14} stroke={1.5} style={{ color: 'var(--orange-400)', marginBottom: 6 }} />
-                      <p style={{ fontSize: 13, lineHeight: 1.65, color: 'rgba(255,255,255,.58)', fontStyle: 'italic', margin: 0 }}>"{item.quote}"</p>
-                    </div>
+                  <div style={{ flex: 1 }}>
+                    <Icon name=”quote” size={14} stroke={1.5} style={{ color: 'var(--orange-400)', marginBottom: 6 }} />
+                    <p style={{ fontSize: 13, lineHeight: 1.65, color: 'rgba(255,255,255,.58)', fontStyle: 'italic', margin: 0 }}>”{item.quote}”</p>
                   </div>
                 </div>
               </div>
             );
           })}
         </div>
+
+        {/* → next */}
+        <button onClick={goNext}
+          style={Object.assign({}, btnBase, { right: 8,
+            background: 'var(--grad-brand)', boxShadow: '0 4px 24px rgba(242,135,5,.5)' })}
+          onMouseEnter={function(e){ e.currentTarget.style.opacity='.82'; }}
+          onMouseLeave={function(e){ e.currentTarget.style.opacity='1'; }}>
+          <Icon name=”chevron-right” size={22} stroke={2.5} />
+        </button>
       </div>
-      <div className="lt-wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 28 }}>
-        <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-          {team.map(function(_, i) {
-            return (
-              <button key={i} onClick={function() { goTo(i); }} style={{ height: 8, width: i === activeDot ? 28 : 8, borderRadius: 99, background: i === activeDot ? 'var(--orange-400)' : 'rgba(255,255,255,.22)', border: 'none', cursor: 'pointer', padding: 0, transition: 'all .3s ease' }}></button>
-            );
-          })}
-        </div>
-        <div style={{ display: 'flex', gap: 10 }}>
-          <button onClick={goPrev} style={{ width: 44, height: 44, borderRadius: '50%', background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.14)', cursor: 'pointer', display: 'grid', placeItems: 'center', color: '#fff' }}>
-            <Icon name="chevron-left" size={20} stroke={2.5} />
-          </button>
-          <button onClick={goNext} style={{ width: 44, height: 44, borderRadius: '50%', background: 'var(--grad-brand)', border: 'none', cursor: 'pointer', display: 'grid', placeItems: 'center', color: '#fff' }}>
-            <Icon name="chevron-right" size={20} stroke={2.5} />
-          </button>
-        </div>
+
+      {/* ── Dots ── */}
+      <div className=”lt-wrap” style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 28, gap: 8 }}>
+        {team.map(function(_, i) {
+          return (
+            <button key={i} onClick={function(){ goTo(i); }}
+              style={{ height: 8, width: i === slide.idx ? 28 : 8, borderRadius: 99,
+                background: i === slide.idx ? 'var(--orange-400)' : 'rgba(255,255,255,.22)',
+                border: 'none', cursor: 'pointer', padding: 0, transition: 'all .3s ease' }} />
+          );
+        })}
       </div>
     </section>
   );
