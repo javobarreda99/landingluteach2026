@@ -97,7 +97,7 @@ function Hero({ onScrollTo }) {
             Educación de calidad para quienes <span className="lt-grad-text">siempre estuvieron cerca</span>
           </h1>
           <p className="lt-body-lg" style={{ maxWidth: 500, marginTop: 18, color: 'rgba(255,255,255,.74)' }}>
-            Luteach brinda reforzamiento académico de los hijos de tus colaboradores y tus comunidades, generando bienestar para las familias e impacto real para tu organización.
+            Luteach brinda reforzamiento académico para los hijos de tus colaboradores y tus comunidades, generando bienestar para las familias e impacto real para tu organización.
           </p>
           <div style={{ display: 'flex', gap: 14, marginTop: 28, flexWrap: 'wrap' }}>
             <a className="btn btn-primary btn-lg" href="#">Conversemos<Icon name="arrow-right" size={18} stroke={2} /></a>
