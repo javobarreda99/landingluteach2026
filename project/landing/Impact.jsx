@@ -163,6 +163,7 @@ function ElPuente() {
               <p className="lt-body-sm" style={{ margin: 0, color: 'rgba(255,255,255,0.48)' }}>Cada estudiante recibe al Luteacher ideal, mientras que los Luteachers fortalecen habilidades que los acompañarán toda su vida y que el mercado laboral requiere.</p>
             </div>
           </div>
+
         </div>
 
         {/* ── EPIC CIRCLE ── */}
@@ -422,13 +423,12 @@ function QuienesSon() {
 
 function Luteachers() {
   var team = [
-    { img: 'assets/luteacher-lucia.png', name: 'Lucia Llerena', years: '2020 - 2022', carrera: 'Ingeniera Quimica', ahora: 'Master en Maastricht University', quote: 'Ser Luteacher me enseno algo que ninguna clase me habia dado antes: si no puedes explicar una idea compleja de forma simple, todavia no la entiendes del todo. Esa habilidad termino convirtiendose en una de las mas importantes en mi desarrollo profesional. Hoy esa base me acompana en cada proyecto que lidero.' },
-    { img: 'assets/luteacher-marco.png', name: 'Marco Cordova', years: '2021 - 2023', carrera: 'Ingeniero Ambiental', ahora: 'Cofundador de Natek', quote: 'Ingrese a Luteach mientras estudiaba Ingenieria Ambiental en UTEC, buscando una oportunidad para compartir conocimientos. Con el tiempo descubri que enseniar era mucho mas que explicar conceptos: era aprender a escuchar, comunicar y liderar.' },
-    { img: 'assets/luteacher-fernanda.png', name: 'Fernanda Matallana', years: '2021 - 2023', carrera: 'Ingeniera Civil', ahora: 'Ingeniera en Ausenco', quote: 'Mi paso por Luteach fue una experiencia que me marco academica y profesionalmente. Ser Luteacher me desafio a descomponer ideas complejas en conceptos simples y concretos. Hoy aplico ese mismo enfoque en mi dia a dia en Ausenco.' },
-    { img: 'assets/luteacher-alberto.png', name: 'Alberto Garcia', years: '2019 - 2021', carrera: 'Ingeniero Mecanico', ahora: 'Ingeniero de Innovacion en NEXA Resources', quote: 'Ser parte de Luteach fue clave en mi formacion. Empiece ensenando mientras era estudiante y eso no solo me ayudo a mantener el primer puesto de mi carrera, sino a entender de verdad lo que aprendia. Hoy lidero proyectos de innovacion en NEXA.' },
-    { img: 'assets/luteacher-valeria.png', name: 'Valeria Abad', years: '2019 - 2022', carrera: 'Ingeniera Mecanica', ahora: 'Ingeniera en Lima Airport Partners', quote: 'Ingrese a Luteach para generar un ingreso adicional, pero termine llevandome mucho mas. Descubri el valor de la empatia y la capacidad de explicar conceptos complejos de forma sencilla. Competencias clave en mi participacion en la ampliacion del Aeropuerto Jorge Chavez.' },
+    { img: 'assets/luteacher-lucia.png', name: 'Lucía Llerena', years: '2020 – 2022', carrera: 'Ingeniera Química', ahora: 'Máster en Maastricht University', quote: 'Ser Luteacher me enseñó algo que ninguna clase me había dado antes: si no puedes explicar una idea compleja de forma simple, todavía no la entiendes del todo. Esa habilidad terminó convirtiéndose en una de las más importantes en mi desarrollo profesional. Desde entonces, no solo mejoré mi forma de aprender, sino también de pensar. Hoy esa base me acompaña en cada proyecto que lidero, y me ha abierto nuevas oportunidades, como cursar actualmente una maestría en economía circular en Maastricht".' },
+    { img: 'assets/luteacher-marco.png', name: 'Marco Córdova', years: '2021 – 2023', carrera: 'Ingeniera Ambiental', ahora: 'Cofundador de Natek', quote: 'Ingresé a Luteach mientras estudiaba Ingeniería Ambiental en UTEC, buscando una oportunidad para compartir conocimientos. Con el tiempo descubrí que enseñar era mucho más que explicar conceptos: era aprender a escuchar, comunicar y liderar. Esta experiencia fortaleció habilidades que luego fueron clave en mi trabajo como investigador, gestor de proyectos y cofundador de Natek Systems. Hoy sigo aplicando las herramientas que desarrollé en Luteach para coordinar equipos, presentar ideas y transformar desafíos complejos en soluciones concretas. Fue una experiencia que marcó mi formación tanto profesional como personal.' },
+    { img: 'assets/luteacher-fernanda.png', name: 'Fernanda Matallana', years: '2021 – 2023', carrera: 'Ingeniera Civil', ahora: 'Ingeniera en Ausenco', quote: 'Mi paso por Luteach fue una experiencia que me marcó académica y profesionalmente. Ser Luteacher me desafió a descomponer ideas complejas en conceptos simples y concretos, asegurándome de que el alumno realmente lo entendiera. Fue ahí donde me apropié de una idea que me acompaña hasta hoy en día: “si puedes explicarle algo a un niño pequeño, entonces verdaderamente dominas el tema”. Hoy, trabajando en Ausenco, aplico ese mismo enfoque en mi día a día en una casa de ingeniería de alto nivel, ya sea entendiendo alcances complejos, colaborando con equipos o enfrentando problemas técnicos. Luteach no solo me hizo mejor estudiante, me hizo mejor profesional.' },
+    { img: 'assets/luteacher-alberto.png', name: 'Alberto García', years: '2019 – 2021', carrera: 'Ingeniera Mecánica', ahora: 'Ingeniero de Innovación en NEXA Resources', quote: 'Ser parte de Luteach fue clave en mi formación. Empecé enseñando mientras era estudiante y eso no solo me ayudó a mantener el primer puesto de mi carrera, sino a entender de verdad lo que aprendía. Explicar a otros me obligó a profundizar, ordenar mis ideas y desarrollar habilidades que hoy son esenciales en mi vida profesional. Hoy lidero proyectos de innovación en NEXA, y estoy seguro de que gran parte de ese crecimiento viene de las horas que pasé enseñando. Luteach no solo me ayudó a estudiar mejor, me ayudó a convertirme en el profesional que soy hoy.' },
+    { img: 'assets/luteacher-valeria.png', name: 'Valeria Abad', years: '2019 – 2022', carrera: 'Ingeniera Mecánica', ahora: 'Ingeniera en Lima Airport Partners', quote: 'Ingresé a Luteach inicialmente para generar un ingreso adicional durante mi etapa universitaria, pero terminé llevándome mucho más que eso. Como ex Luteacher, descubrí el valor de la empatía y la capacidad de explicar conceptos complejos de forma sencilla, acompañando a estudiantes que atravesaban los mismos desafíos que yo había vivido. Esta experiencia fortaleció mis habilidades de comunicación, liderazgo y trabajo con personas, competencias que posteriormente fueron clave en mi desarrollo profesional. Gracias a ello pude integrarme y coordinar con éxito equipos multidisciplinarios y profesionales de amplia experiencia durante mi participación en el proyecto de ampliación del Nuevo Aeropuerto Internacional Jorge Chávez, donde trabajé por más de dos años y medio. Luteach no solo me permitió enseñar, sino también desarrollar habilidades humanas que siguen siendo fundamentales en mi carrera como ingeniera y como persona.' },
   ];
-
   var stIdx = React.useState(0);
   var idx = stIdx[0];
   var setIdx = stIdx[1];
@@ -440,79 +440,54 @@ function Luteachers() {
     return function() { clearInterval(t); };
   }, []);
 
-  function goNext() { setIdx(function(i) { return (i + 1) % team.length; }); }
-  function goPrev() { setIdx(function(i) { return (i - 1 + team.length) % team.length; }); }
-  function goTo(i) { setIdx(i); }
-
   var item = team[idx];
 
   return (
-    <section id=”luteachers” style={{ padding: '104px 0 80px', background: 'var(--ink-900)', color: '#fff', overflow: 'hidden' }}>
-      <div className=”lt-wrap”>
-        <div style={{ maxWidth: 760, marginBottom: 52 }}>
-          <div className=”lt-overline” style={{ color: 'var(--orange-400)' }}>De las aulas al impacto</div>
-          <h2 className=”lt-h1” style={{ color: '#fff', margin: '16px 0 0', fontSize: 46, letterSpacing: '-0.02em' }}>
-            Enseniar es una de las experiencias que mas acelera el crecimiento profesional.
+    <section id="luteachers" style={{ padding: '104px 0 80px', background: 'var(--ink-900)', color: '#fff', overflow: 'hidden' }}>
+      <div className="lt-wrap">
+        <div style={{ maxWidth: 760, marginBottom: 48 }}>
+          <div className="lt-overline" style={{ color: 'var(--orange-400)' }}>De las aulas al impacto</div>
+          <h2 className="lt-h1" style={{ color: '#fff', margin: '16px 0 0', fontSize: 46, letterSpacing: '-0.02em' }}>
+            Enseñar es una de las experiencias que más acelera el crecimiento profesional.
           </h2>
-          <p className=”lt-body-lg” style={{ color: 'rgba(255,255,255,.6)', marginTop: 16, maxWidth: 600 }}>
+          <p className="lt-body-lg" style={{ color: 'rgba(255,255,255,.6)', marginTop: 16, maxWidth: 600 }}>
             Muchos de nuestros Luteachers hoy destacan en empresas, universidades y organizaciones de primer nivel.
           </p>
         </div>
-      </div>
 
-      <div className=”lt-wrap” style={{ maxWidth: 900, margin: '0 auto', position: 'relative' }}>
-        <div style={{ borderRadius: 20, overflow: 'hidden', background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.1)', display: 'flex' }}>
-
-          <div style={{ position: 'relative', width: 320, minWidth: 320, flex: 'none' }}>
-            <img src={item.img} alt={item.name}
-              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', minHeight: 400 }} />
-            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(to right,transparent 60%,rgba(0,0,0,.4))', pointerEvents: 'none' }}></div>
-
-            <button onClick={goPrev}
-              style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)',
-                width: 44, height: 44, borderRadius: '50%', border: '1.5px solid rgba(255,255,255,.3)',
-                background: 'rgba(14,18,30,.75)', backdropFilter: 'blur(8px)',
-                cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                color: '#fff', zIndex: 5 }}>
-              <Icon name=”chevron-left” size={20} stroke={2.5} />
-            </button>
-
-            <button onClick={goNext}
-              style={{ position: 'absolute', right: 12, top: '50%', transform: 'translateY(-50%)',
-                width: 44, height: 44, borderRadius: '50%', border: 'none',
-                background: 'var(--grad-brand)', boxShadow: '0 4px 18px rgba(242,135,5,.5)',
-                cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                color: '#fff', zIndex: 5 }}>
-              <Icon name=”chevron-right” size={20} stroke={2.5} />
-            </button>
-
-            <span style={{ position: 'absolute', top: 14, left: 14,
-              background: 'rgba(255,255,255,.14)', backdropFilter: 'blur(8px)',
-              border: '1px solid rgba(255,255,255,.2)', color: '#fff',
-              borderRadius: 99, padding: '4px 12px', fontSize: 12, fontWeight: 600 }}>
-              Luteacher - {item.years}
+        <div style={{ borderRadius: 20, overflow: 'hidden', background: 'rgba(255,255,255,.04)', border: '1px solid rgba(255,255,255,.08)', display: 'flex', maxWidth: 900 }}>
+          <div style={{ position: 'relative', width: 300, minWidth: 300, flex: 'none' }}>
+            <img src={item.img} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', minHeight: 420 }} />
+            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(to top, rgba(0,0,0,.5) 0%, transparent 50%)', pointerEvents: 'none' }}></div>
+            <span style={{ position: 'absolute', top: 14, left: 14, background: 'rgba(255,255,255,.14)', WebkitBackdropFilter: 'blur(8px)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,.2)', color: '#fff', borderRadius: 99, padding: '4px 12px', fontSize: 12, fontWeight: 600 }}>
+              Luteacher · {item.years}
             </span>
+            <button onClick={function() { setIdx(function(i) { return (i - 1 + team.length) % team.length; }); }}
+              style={{ position: 'absolute', left: 12, bottom: 20, width: 44, height: 44, borderRadius: '50%', border: '1.5px solid rgba(255,255,255,.35)', background: 'rgba(14,18,30,.8)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
+              <Icon name="chevron-left" size={20} stroke={2.5} />
+            </button>
+            <button onClick={function() { setIdx(function(i) { return (i + 1) % team.length; }); }}
+              style={{ position: 'absolute', right: 12, bottom: 20, width: 44, height: 44, borderRadius: '50%', border: 'none', background: 'var(--grad-brand)', boxShadow: '0 4px 18px rgba(242,135,5,.45)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
+              <Icon name="chevron-right" size={20} stroke={2.5} />
+            </button>
           </div>
-
-          <div style={{ flex: 1, padding: '36px 36px 36px 32px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <div style={{ flex: 1, padding: '32px 36px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             <h3 style={{ fontWeight: 700, fontSize: 22, color: '#fff', margin: '0 0 4px', letterSpacing: '-0.01em' }}>{item.name}</h3>
-            <div style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 4 }}>{item.carrera}</div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 7, paddingBottom: 20, borderBottom: '1px solid rgba(255,255,255,.08)', marginBottom: 20 }}>
-              <Icon name=”briefcase” size={13} stroke={2} style={{ color: 'var(--orange-400)', flex: 'none' }} />
+            <div style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 16 }}>{item.carrera}</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, paddingBottom: 20, borderBottom: '1px solid rgba(255,255,255,.08)', marginBottom: 20 }}>
+              <Icon name="briefcase" size={13} stroke={2} style={{ color: 'var(--orange-400)', flex: 'none' }} />
               <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--orange-300)' }}>{item.ahora}</span>
             </div>
-            <Icon name=”quote” size={16} stroke={1.5} style={{ color: 'var(--orange-400)', marginBottom: 10 }} />
-            <p style={{ fontSize: 15, lineHeight: 1.7, color: 'rgba(255,255,255,.72)', fontStyle: 'italic', margin: 0 }}>{item.quote}</p>
+            <Icon name="quote" size={16} stroke={1.5} style={{ color: 'var(--orange-400)', marginBottom: 10 }} />
+            <p style={{ fontSize: 14, lineHeight: 1.7, color: 'rgba(255,255,255,.7)', fontStyle: 'italic', margin: 0 }}>{item.quote}</p>
           </div>
         </div>
 
-        <div style={{ display: 'flex', justifyContent: 'center', gap: 8, marginTop: 24 }}>
+        <div style={{ display: 'flex', gap: 8, marginTop: 24 }}>
           {team.map(function(_, i) {
             return (
-              <button key={i} onClick={function() { goTo(i); }}
-                style={{ height: 8, width: i === idx ? 28 : 8, borderRadius: 99,
-                  background: i === idx ? 'var(--orange-400)' : 'rgba(255,255,255,.22)',
-                  border: 'none', cursor: 'pointer', padding: 0, transition: 'all .3s ease' }}></button>
+              <button key={i} onClick={function() { setIdx(i); }}
+                style={{ height: 8, width: i === idx ? 28 : 8, borderRadius: 99, background: i === idx ? 'var(--orange-400)' : 'rgba(255,255,255,.22)', border: 'none', cursor: 'pointer', padding: 0, transition: 'all .3s ease' }}></button>
             );
           })}
         </div>
