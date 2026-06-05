@@ -12,18 +12,20 @@ const L_ICON = 'assets/luteach-icon.jpg';
 
 function Nav({ onScrollTo }) {
   const [scrolled, setScrolled] = React.useState(false);
+  const [menuOpen, setMenuOpen] = React.useState(false);
   React.useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 500);
     window.addEventListener('scroll', fn); return () => window.removeEventListener('scroll', fn);
   }, []);
   const links = [['Desafío', 'desafios'], ['Cómo funciona', 'como'], ['Impacto', 'impacto'], ['Aliados', 'aliados']];
+  const navTo = (id) => { setMenuOpen(false); onScrollTo(id); };
   return (
     <header style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50,
       background: scrolled ? 'rgba(255,255,255,.92)' : 'transparent',
       backdropFilter: scrolled ? 'saturate(180%) blur(12px)' : 'none',
       borderBottom: scrolled ? '1px solid var(--sand-200)' : '1px solid transparent', transition: 'all .25s' }}>
       <div className="lt-wrap" style={{ display: 'flex', alignItems: 'center', gap: 28, height: 72 }}>
-        <a href="#" onClick={e => { e.preventDefault(); onScrollTo('top'); }}><img src={scrolled ? L_LOGO : L_LOGO_W} alt="Luteach" style={{ height: 42 }} /></a>
+        <a href="#" onClick={e => { e.preventDefault(); navTo('top'); }}><img src={scrolled ? L_LOGO : L_LOGO_W} alt="Luteach" style={{ height: 42 }} /></a>
         <nav className="nav-links" style={{ display: 'flex', gap: 24, marginLeft: 8 }}>
           {links.map(([l, id]) => (
             <a key={id} href={'#' + id} onClick={e => { e.preventDefault(); onScrollTo(id); }}
@@ -36,8 +38,47 @@ function Nav({ onScrollTo }) {
           <a className="btn btn-ghost btn-sm" href="#" style={{ fontSize: 13, color: scrolled ? 'var(--ink-700)' : 'rgba(255,255,255,.85)', boxShadow: scrolled ? '' : 'inset 0 0 0 1.5px rgba(255,255,255,.35)' }}>Conviértete en Luteacher</a>
           <a className="btn btn-ghost btn-sm" href="#" style={{ fontSize: 13, color: scrolled ? 'var(--ink-700)' : 'rgba(255,255,255,.85)', boxShadow: scrolled ? '' : 'inset 0 0 0 1.5px rgba(255,255,255,.35)' }}>Iniciar sesión</a>
           <a className="btn btn-primary btn-sm" href="#" style={{ fontSize: 13 }}>Agenda una reunión</a>
+          {/* Hamburger — shown on mobile via CSS, inline display:none hides on desktop */}
+          <button className="nav-hamburger" onClick={() => setMenuOpen(o => !o)}
+            style={{ display: 'none', background: 'transparent',
+              border: scrolled ? '1.5px solid var(--sand-300)' : '1.5px solid rgba(255,255,255,.35)',
+              borderRadius: 8, padding: '7px 9px', cursor: 'pointer',
+              color: scrolled ? 'var(--ink-700)' : '#fff',
+              alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+            <Icon name={menuOpen ? 'x' : 'menu'} size={20} stroke={2} />
+          </button>
         </div>
       </div>
+
+      {/* ── Mobile nav drawer ── */}
+      {menuOpen && (
+        <div style={{ position: 'absolute', top: 72, left: 0, right: 0,
+          background: 'rgba(14, 18, 30, 0.98)', backdropFilter: 'saturate(180%) blur(16px)',
+          borderBottom: '1px solid rgba(255,255,255,.12)', padding: '4px 20px 28px', zIndex: 48 }}>
+          {links.map(([l, id]) => (
+            <a key={id} href={'#' + id}
+              onClick={e => { e.preventDefault(); navTo(id); }}
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                padding: '17px 0', color: 'rgba(255,255,255,.88)', fontSize: 17, fontWeight: 600,
+                borderBottom: '1px solid rgba(255,255,255,.07)', textDecoration: 'none',
+                letterSpacing: '-0.01em' }}>
+              {l}
+              <Icon name="chevron-right" size={16} stroke={2.5} style={{ color: 'rgba(255,255,255,.3)' }} />
+            </a>
+          ))}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginTop: 22 }}>
+            <a href="#" className="btn btn-lg" style={{ background: 'rgba(255,255,255,.08)', color: '#fff', border: '1px solid rgba(255,255,255,.18)', textAlign: 'center', justifyContent: 'center' }}>
+              Conviértete en Luteacher
+            </a>
+            <a href="#" className="btn btn-lg" style={{ background: 'rgba(255,255,255,.04)', color: 'rgba(255,255,255,.7)', border: '1px solid rgba(255,255,255,.1)', textAlign: 'center', justifyContent: 'center' }}>
+              Iniciar sesión
+            </a>
+            <a href="#" className="btn btn-primary btn-lg" style={{ textAlign: 'center', justifyContent: 'center' }}>
+              Agenda una reunión →
+            </a>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

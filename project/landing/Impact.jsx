@@ -452,10 +452,34 @@ function Luteachers() {
     return function() { window.removeEventListener('resize', onResize); };
   }, []);
 
+  // Prevents rapid clicks from stacking transitions and breaking the loop
+  var navLock = React.useRef(false);
+  function goNext() {
+    if (navLock.current) return;
+    navLock.current = true;
+    setAnim(true);
+    setIdx(function(i) { return i + 1; });
+    setTimeout(function() { navLock.current = false; }, 800);
+  }
+  function goPrev() {
+    if (navLock.current) return;
+    navLock.current = true;
+    setAnim(false);
+    setIdx(function(i) { return (i - 1 + team.length) % team.length; });
+    setTimeout(function() { navLock.current = false; }, 150);
+  }
+  function goTo(i) {
+    navLock.current = false;
+    setAnim(true);
+    setIdx(i);
+  }
+
   React.useEffect(function() {
     var timer = setInterval(function() {
-      setAnim(true);
-      setIdx(function(i) { return i + 1; });
+      if (!navLock.current) {
+        setAnim(true);
+        setIdx(function(i) { return i + 1; });
+      }
     }, 10000);
     return function() { clearInterval(timer); };
   }, []);
@@ -465,7 +489,8 @@ function Luteachers() {
       var t = setTimeout(function() {
         setAnim(false);
         setIdx(0);
-      }, 680);
+        navLock.current = false;
+      }, 720);
       return function() { clearTimeout(t); };
     }
   }, [idx]);
@@ -529,15 +554,15 @@ function Luteachers() {
         <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
           {team.map(function(_, i) {
             return (
-              <button key={i} onClick={function() { setAnim(true); setIdx(i); }} style={{ height: 8, width: i === activeDot ? 28 : 8, borderRadius: 99, background: i === activeDot ? 'var(--orange-400)' : 'rgba(255,255,255,.22)', border: 'none', cursor: 'pointer', padding: 0, transition: 'all .3s ease' }}></button>
+              <button key={i} onClick={function() { goTo(i); }} style={{ height: 8, width: i === activeDot ? 28 : 8, borderRadius: 99, background: i === activeDot ? 'var(--orange-400)' : 'rgba(255,255,255,.22)', border: 'none', cursor: 'pointer', padding: 0, transition: 'all .3s ease' }}></button>
             );
           })}
         </div>
         <div style={{ display: 'flex', gap: 10 }}>
-          <button onClick={function() { setAnim(false); setIdx(function(i) { return (i - 1 + team.length) % team.length; }); }} style={{ width: 44, height: 44, borderRadius: '50%', background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.14)', cursor: 'pointer', display: 'grid', placeItems: 'center', color: '#fff' }}>
+          <button onClick={goPrev} style={{ width: 44, height: 44, borderRadius: '50%', background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.14)', cursor: 'pointer', display: 'grid', placeItems: 'center', color: '#fff' }}>
             <Icon name="chevron-left" size={20} stroke={2.5} />
           </button>
-          <button onClick={function() { setAnim(true); setIdx(function(i) { return i + 1; }); }} style={{ width: 44, height: 44, borderRadius: '50%', background: 'var(--grad-brand)', border: 'none', cursor: 'pointer', display: 'grid', placeItems: 'center', color: '#fff' }}>
+          <button onClick={goNext} style={{ width: 44, height: 44, borderRadius: '50%', background: 'var(--grad-brand)', border: 'none', cursor: 'pointer', display: 'grid', placeItems: 'center', color: '#fff' }}>
             <Icon name="chevron-right" size={20} stroke={2.5} />
           </button>
         </div>

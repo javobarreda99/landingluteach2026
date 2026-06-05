@@ -38,7 +38,9 @@
   .nav-links a { white-space: nowrap; }
   .course-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--orange-300); }
   image-slot { display:block; }
-  @media (max-width: 960px){ .nav-links{ display:none !important; } }
+  /* Hamburger hidden on desktop, shown when nav-links collapse */
+  .nav-hamburger { display: none; }
+  @media (max-width: 960px) { .nav-links { display:none !important; } .nav-hamburger { display: flex !important; } }
 
   /* ═══════════════════════════════════════
      RESPONSIVE — MOBILE (≤ 768px)
