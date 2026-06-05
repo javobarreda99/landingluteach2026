@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;font-family:var(--font-body);background:var(--paper);padding:22px;color:var(--ink-900)}
+  .row{display:flex;gap:14px}
+  .sw{flex:1}
+  .chip{height:56px;border-radius:var(--r-sm)}
+  .bg{height:26px;border-radius:var(--r-sm);margin-top:8px;display:flex;align-items:center;justify-content:center;font:var(--caption);font-weight:700}
+  .meta{padding:8px 2px 0}
+  .name{font:var(--caption);color:var(--ink-900);font-weight:700}
+  .hex{font:var(--code);color:var(--ink-500);font-size:12px}
+</style></head>
+<body>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:var(--success)"></div><div class="bg" style="background:var(--success-bg);color:var(--success)">success</div><div class="meta"><div class="name">success</div><div class="hex">#3FA66A</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--warning)"></div><div class="bg" style="background:var(--warning-bg);color:var(--warning)">warning</div><div class="meta"><div class="name">warning</div><div class="hex">#E0930C</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--error)"></div><div class="bg" style="background:var(--error-bg);color:var(--error)">error</div><div class="meta"><div class="name">error</div><div class="hex">#DB4B3E</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--info)"></div><div class="bg" style="background:var(--info-bg);color:var(--info)">info</div><div class="meta"><div class="name">info</div><div class="hex">#2E8FC4</div></div></div>
+  </div>
+</body></html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;font-family:var(--font-body);background:var(--paper);padding:22px;color:var(--ink-900)}
+  .brand{height:78px;border-radius:var(--r-lg);background:var(--grad-brand);margin-bottom:6px;display:flex;align-items:flex-end;padding:10px 14px}
+  .brand .lbl{font:var(--caption);font-weight:800;color:#fff}
+  .hex{font:var(--code);color:var(--ink-500);font-size:12px;margin-bottom:14px}
+  .cats{display:flex;gap:12px}
+  .cat{flex:1}
+  .tile{height:54px;border-radius:var(--r-md);box-shadow:var(--shadow-sm)}
+  .cn{font:var(--caption);color:var(--ink-700);font-weight:700;margin-top:7px;text-align:center}
+</style></head>
+<body>
+  <div class="brand"><span class="lbl">Signature brand gradient · 135°</span></div>
+  <div class="hex">--grad-brand · #F35D06 → #F8A01C</div>
+  <div class="cats">
+    <div class="cat"><div class="tile" style="background:var(--cat-code)"></div><div class="cn">Code</div></div>
+    <div class="cat"><div class="tile" style="background:var(--cat-math)"></div><div class="cn">Math</div></div>
+    <div class="cat"><div class="tile" style="background:var(--cat-physics)"></div><div class="cn">Physics</div></div>
+    <div class="cat"><div class="tile" style="background:var(--cat-chem)"></div><div class="cn">Chem</div></div>
+    <div class="cat"><div class="tile" style="background:var(--cat-bio)"></div><div class="cn">Bio</div></div>
+  </div>
+</body></html>

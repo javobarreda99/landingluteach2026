@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;background:var(--paper);padding:24px;color:var(--ink-900);display:flex;gap:16px}
+  .field{flex:1}
+  label{font:var(--caption);font-weight:700;color:var(--ink-700);display:block;margin-bottom:6px}
+  input{width:100%;box-sizing:border-box;font-family:var(--font-body);font-size:15px;color:var(--ink-900);padding:12px 14px;border-radius:var(--r-md);border:1.5px solid var(--sand-300);background:var(--paper);outline:none}
+  input::placeholder{color:var(--ink-300)}
+  .focus input{border-color:var(--orange-500);box-shadow:0 0 0 3px rgba(242,135,5,.30)}
+  .hint{font:var(--caption);color:var(--ink-400);margin-top:6px}
+  .err input{border-color:var(--error)}
+  .err .hint{color:var(--error)}
+</style></head>
+<body>
+  <div class="field"><label>School name</label><input value="Lincoln STEM Academy"><div class="hint">Default</div></div>
+  <div class="field focus"><label>Work email</label><input value="admin@school.edu"><div class="hint">Focused</div></div>
+  <div class="field err"><label>Seats</label><input value="0"><div class="hint">Enter at least 1 seat</div></div>
+</body></html>

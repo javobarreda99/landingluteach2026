@@ -1,0 +1,150 @@
+/* ============================================================
+   LUTEACH DESIGN SYSTEM — Colors & Type
+   Warm, minimalist edtech brand. B2B STEM tutoring platform.
+   Brand primary sampled from official assets: #F28705 (wordmark),
+   warm gradient #F35D06 → #F28705 (app icon).
+   ============================================================ */
+
+/* ---- Fonts ----
+   Display/headings: Poppins — geometric, rounded, friendly-but-pro.
+   Nearest Google Fonts match to the custom LUTEACH wordmark
+   (chunky geometric sans with rounded outer corners). SUBSTITUTION —
+   see README. Body: Nunito Sans — warm humanist sans, highly legible.
+   Mono: JetBrains Mono — used in code-course contexts. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,500;6..12,600;6..12,700;6..12,800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ---------- BRAND / PRIMARY ---------- */
+  --orange-500: #F28705;   /* Luteach Orange — primary brand */
+  --orange-600: #F35D06;   /* Deep orange — gradient start, pressed */
+  --orange-400: #F8A01C;   /* Amber — gradient mid / highlights */
+  --orange-300: #FBC56B;   /* Soft amber — tints, hover bg */
+  --orange-100: #FDEBD2;   /* Pale cream-orange — subtle fills */
+  --orange-700: #C96E04;   /* Darker orange — text on light, hover */
+
+  /* ---------- SECONDARY / TRUST BLUE ----------
+     Added to build B2B trust (banks, mining, NGOs, institutions).
+     Pairs with the warm orange as a calm, credible counterweight. */
+  --blue-700: #134C7E;   /* Deepest — text on light */
+  --blue-600: #1A5E97;   /* Strong — pressed/hover */
+  --blue-500: #2480C2;   /* Trust blue — secondary brand */
+  --blue-400: #4FA3DE;   /* Light — highlights */
+  --blue-300: #9CCBEC;   /* Soft — tints */
+  --blue-100: #E4F1FA;   /* Pale — subtle fills */
+  --grad-trust: linear-gradient(135deg, #1A5E97 0%, #2480C2 100%);
+
+  /* ---------- SLATE / TECH (hero, dark surfaces) ---------- */
+  --slate-950: #10151F;
+  --slate-900: #161D2B;
+  --slate-800: #1F2838;
+  --slate-700: #2C3749;
+  --slate-600: #3D4A60;
+  --grad-slate: linear-gradient(160deg, #1A2233 0%, #10151F 100%);
+  --grad-hero:  linear-gradient(155deg, #20304F 0%, #141B2B 70%);
+
+  /* ---------- COOL LIGHT NEUTRALS (section alternation) ---------- */
+  --cool-50:  #F4F6FA;
+  --cool-100: #ECEFF4;
+  --cool-200: #DEE3EB;
+
+  /* Signature warm gradient (icon-derived) */
+  --grad-brand: linear-gradient(135deg, #F35D06 0%, #F8A01C 100%);
+  --grad-brand-soft: linear-gradient(135deg, #FBC56B 0%, #F8A01C 100%);
+
+  /* ---------- WARM NEUTRALS ---------- */
+  --ink-900: #2B2520;   /* Warm near-black — primary text */
+  --ink-700: #4D443B;   /* Warm charcoal — strong body */
+  --ink-500: #6B5D50;   /* Warm taupe — secondary text */
+  --ink-600: #5A4E43;   /* Between 700 and 500 */
+  --ink-400: #9A8C7D;   /* Muted taupe — tertiary / captions */
+  --ink-300: #C4B7A8;   /* Disabled text / faint */
+
+  --paper:     #FFFFFF;  /* Card / surface */
+  --canvas:    #FFF9F3;  /* App background — warm off-white */
+  --canvas-2:  #FDF4EA;  /* Alt section background — warm cream */
+  --sand-100:  #F7ECDF;  /* Subtle fill / hover row */
+  --sand-200:  #F0E4D6;  /* Hairline borders */
+  --sand-300:  #E5D5C2;  /* Stronger borders / dividers */
+
+  /* ---------- SEMANTIC ---------- */
+  --success: #3FA66A;  --success-bg: #E6F4EC;
+  --warning: #E0930C;  --warning-bg: #FDF0D9;
+  --error:   #DB4B3E;  --error-bg:   #FBE7E4;
+  --info:    #2E8FC4;  --info-bg:    #E3F2FB;
+
+  /* ---------- CATEGORY GRADIENTS (sampled from the real course icons) ---------- */
+  --cat-code:    linear-gradient(135deg, #5CBDE7 0%, #324E60 100%); /* Programación */
+  --cat-math:    linear-gradient(135deg, #FCC714 0%, #F39107 100%); /* Matemáticas */
+  --cat-physics: linear-gradient(135deg, #03DBBE 0%, #00B3E3 100%); /* Física */
+  --cat-chem:    linear-gradient(135deg, #58EA39 0%, #E4CB16 100%); /* Química */
+  --cat-bio:     linear-gradient(135deg, #A06BFF 0%, #5B2BD6 100%); /* Biología (derived, vibrant) */
+  --cat-english: linear-gradient(135deg, #418EEB 0%, #EA5380 100%); /* Inglés */
+
+  /* Vibrant accent washes built from the same palette — use boldly */
+  --grad-aqua: linear-gradient(135deg, #03DBBE 0%, #00B3E3 100%);
+  --grad-lime: linear-gradient(135deg, #58EA39 0%, #E4CB16 100%);
+  --grad-gold: linear-gradient(135deg, #FCC714 0%, #F39107 100%);
+
+  /* ---------- RADII ---------- */
+  --r-xs: 6px;
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-xl: 28px;
+  --r-pill: 999px;
+
+  /* ---------- SHADOWS (warm-tinted, soft) ---------- */
+  --shadow-xs: 0 1px 2px rgba(43, 37, 32, 0.06);
+  --shadow-sm: 0 2px 6px rgba(43, 37, 32, 0.07);
+  --shadow-md: 0 8px 20px rgba(43, 37, 32, 0.08);
+  --shadow-lg: 0 18px 40px rgba(43, 37, 32, 0.10);
+  --shadow-orange: 0 10px 24px rgba(242, 135, 5, 0.28); /* glow under primary CTAs */
+
+  /* ---------- SPACING (4px base) ---------- */
+  --space-1: 4px;   --space-2: 8px;   --space-3: 12px;  --space-4: 16px;
+  --space-5: 20px;  --space-6: 24px;  --space-8: 32px;  --space-10: 40px;
+  --space-12: 48px; --space-16: 64px; --space-20: 80px; --space-24: 96px;
+
+  /* ---------- TYPE FAMILIES ---------- */
+  --font-display: 'Poppins', system-ui, sans-serif;
+  --font-body:    'Nunito Sans', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+
+  /* ---------- TYPE SCALE (semantic) ---------- */
+  --display:    700 56px/1.05 var(--font-display);
+  --h1:         700 40px/1.12 var(--font-display);
+  --h2:         600 30px/1.18 var(--font-display);
+  --h3:         600 22px/1.28 var(--font-display);
+  --h4:         600 18px/1.35 var(--font-display);
+  --subtitle:   500 18px/1.5  var(--font-body);
+  --body-lg:    400 18px/1.6  var(--font-body);
+  --body:       400 16px/1.6  var(--font-body);
+  --body-sm:    400 14px/1.55 var(--font-body);
+  --caption:    500 13px/1.4  var(--font-body);
+  --overline:   700 12px/1.3  var(--font-display); /* uppercase, tracked */
+  --code:       500 14px/1.55 var(--font-mono);
+}
+
+/* ---------- BASE ELEMENT STYLES ---------- */
+.lt-display { font: var(--display); letter-spacing: -0.02em; color: var(--ink-900); }
+.lt-h1 { font: var(--h1); letter-spacing: -0.015em; color: var(--ink-900); }
+.lt-h2 { font: var(--h2); letter-spacing: -0.01em; color: var(--ink-900); }
+.lt-h3 { font: var(--h3); color: var(--ink-900); }
+.lt-h4 { font: var(--h4); color: var(--ink-900); }
+.lt-subtitle { font: var(--subtitle); color: var(--ink-700); }
+.lt-body-lg { font: var(--body-lg); color: var(--ink-700); }
+.lt-body { font: var(--body); color: var(--ink-700); }
+.lt-body-sm { font: var(--body-sm); color: var(--ink-500); }
+.lt-caption { font: var(--caption); color: var(--ink-500); }
+.lt-overline {
+  font: var(--overline); letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--orange-700);
+}
+.lt-code { font: var(--code); color: var(--ink-900); }
+
+/* Gradient text helper */
+.lt-grad-text {
+  background: var(--grad-brand);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}

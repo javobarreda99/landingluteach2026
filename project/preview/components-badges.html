@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;background:var(--paper);padding:24px;color:var(--ink-900);display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .badge{font-family:var(--font-display);font-weight:600;font-size:12.5px;padding:5px 12px;border-radius:var(--r-pill);display:inline-flex;align-items:center;gap:6px}
+  .dot{width:7px;height:7px;border-radius:50%}
+  .verified{background:var(--success-bg);color:var(--success)}
+  .pending{background:var(--warning-bg);color:var(--warning)}
+  .new{background:var(--orange-100);color:var(--orange-700)}
+  .info{background:var(--info-bg);color:var(--info)}
+  .neutral{background:var(--sand-100);color:var(--ink-500)}
+  .solid{background:var(--orange-500);color:#fff}
+</style></head>
+<body>
+  <span class="badge verified"><span class="dot" style="background:var(--success)"></span>Vetted tutor</span>
+  <span class="badge pending"><span class="dot" style="background:var(--warning)"></span>Match pending</span>
+  <span class="badge new">New</span>
+  <span class="badge info">Programming</span>
+  <span class="badge neutral">3 seats left</span>
+  <span class="badge solid">Top rated</span>
+</body></html>
