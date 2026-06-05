@@ -4,7 +4,9 @@
       "PowerShell(Start-Process \"http://localhost:3000/Landing.html\")",
       "PowerShell(Get-Process -Name python -ErrorAction SilentlyContinue)",
       "PowerShell(Stop-Process -Force -ErrorAction SilentlyContinue)",
-      "PowerShell(try { \\(Invoke-WebRequest -Uri \"http://localhost:3000/Landing.html\" -UseBasicParsing\\).StatusCode } catch { \"SERVER DOWN\" })"
+      "PowerShell(try { \\(Invoke-WebRequest -Uri \"http://localhost:3000/Landing.html\" -UseBasicParsing\\).StatusCode } catch { \"SERVER DOWN\" })",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }

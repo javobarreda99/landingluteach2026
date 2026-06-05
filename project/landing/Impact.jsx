@@ -422,77 +422,37 @@ function QuienesSon() {
 
 function Luteachers() {
   var team = [
-    { img: 'assets/luteacher-lucia.png', name: 'Lucía Llerena', years: '2020 – 2022', carrera: 'Ingeniera Química', ahora: 'Máster en Maastricht University', quote: 'Ser Luteacher me enseñó algo que ninguna clase me había dado antes: si no puedes explicar una idea compleja de forma simple, todavía no la entiendes del todo. Esa habilidad terminó convirtiéndose en una de las más importantes en mi desarrollo profesional. Desde entonces, no solo mejoré mi forma de aprender, sino también de pensar. Hoy esa base me acompaña en cada proyecto que lidero, y me ha abierto nuevas oportunidades, como cursar actualmente una maestría en economía circular en Maastricht.' },
-    { img: 'assets/luteacher-marco.png', name: 'Marco Córdova', years: '2021 – 2023', carrera: 'Ingeniero Ambiental', ahora: 'Cofundador de Natek', quote: 'Ingresé a Luteach mientras estudiaba Ingeniería Ambiental en UTEC, buscando una oportunidad para compartir conocimientos. Con el tiempo descubrí que enseñar era mucho más que explicar conceptos: era aprender a escuchar, comunicar y liderar. Esta experiencia fortaleció habilidades que luego fueron clave en mi trabajo como investigador, gestor de proyectos y cofundador de Natek Systems.' },
-    { img: 'assets/luteacher-fernanda.png', name: 'Fernanda Matallana', years: '2021 – 2023', carrera: 'Ingeniera Civil', ahora: 'Ingeniera en Ausenco', quote: 'Mi paso por Luteach fue una experiencia que me marcó académica y profesionalmente. Ser Luteacher me desafió a descomponer ideas complejas en conceptos simples y concretos. Fue ahí donde me apropié de una idea que me acompaña hasta hoy: “si puedes explicarle algo a un niño pequeño, entonces verdaderamente dominas el tema”. Hoy aplico ese mismo enfoque en mi día a día en Ausenco.' },
-    { img: 'assets/luteacher-alberto.png', name: 'Alberto García', years: '2019 – 2021', carrera: 'Ingeniero Mecánico', ahora: 'Ingeniero de Innovación en NEXA Resources', quote: 'Ser parte de Luteach fue clave en mi formación. Empecé enseñando mientras era estudiante y eso no solo me ayudó a mantener el primer puesto de mi carrera, sino a entender de verdad lo que aprendía. Hoy lidero proyectos de innovación en NEXA, y estoy seguro de que gran parte de ese crecimiento viene de las horas que pasé enseñando.' },
-    { img: 'assets/luteacher-valeria.png', name: 'Valeria Abad', years: '2019 – 2022', carrera: 'Ingeniera Mecánica', ahora: 'Ingeniera en Lima Airport Partners', quote: 'Ingresé a Luteach para generar un ingreso adicional, pero terminé llevándome mucho más. Descubrí el valor de la empatía y la capacidad de explicar conceptos complejos de forma sencilla. Esta experiencia fortaleció mis habilidades de comunicación, liderazgo y trabajo con personas — competencias clave en mi participación en la ampliación del Aeropuerto Jorge Chávez.' },
+    { img: 'assets/luteacher-lucia.png', name: 'Lucia Llerena', years: '2020 - 2022', carrera: 'Ingeniera Quimica', ahora: 'Master en Maastricht University', quote: 'Ser Luteacher me enseno algo que ninguna clase me habia dado antes: si no puedes explicar una idea compleja de forma simple, todavia no la entiendes del todo. Esa habilidad termino convirtiendose en una de las mas importantes en mi desarrollo profesional. Hoy esa base me acompana en cada proyecto que lidero.' },
+    { img: 'assets/luteacher-marco.png', name: 'Marco Cordova', years: '2021 - 2023', carrera: 'Ingeniero Ambiental', ahora: 'Cofundador de Natek', quote: 'Ingrese a Luteach mientras estudiaba Ingenieria Ambiental en UTEC, buscando una oportunidad para compartir conocimientos. Con el tiempo descubri que enseniar era mucho mas que explicar conceptos: era aprender a escuchar, comunicar y liderar.' },
+    { img: 'assets/luteacher-fernanda.png', name: 'Fernanda Matallana', years: '2021 - 2023', carrera: 'Ingeniera Civil', ahora: 'Ingeniera en Ausenco', quote: 'Mi paso por Luteach fue una experiencia que me marco academica y profesionalmente. Ser Luteacher me desafio a descomponer ideas complejas en conceptos simples y concretos. Hoy aplico ese mismo enfoque en mi dia a dia en Ausenco.' },
+    { img: 'assets/luteacher-alberto.png', name: 'Alberto Garcia', years: '2019 - 2021', carrera: 'Ingeniero Mecanico', ahora: 'Ingeniero de Innovacion en NEXA Resources', quote: 'Ser parte de Luteach fue clave en mi formacion. Empiece ensenando mientras era estudiante y eso no solo me ayudo a mantener el primer puesto de mi carrera, sino a entender de verdad lo que aprendia. Hoy lidero proyectos de innovacion en NEXA.' },
+    { img: 'assets/luteacher-valeria.png', name: 'Valeria Abad', years: '2019 - 2022', carrera: 'Ingeniera Mecanica', ahora: 'Ingeniera en Lima Airport Partners', quote: 'Ingrese a Luteach para generar un ingreso adicional, pero termine llevandome mucho mas. Descubri el valor de la empatia y la capacidad de explicar conceptos complejos de forma sencilla. Competencias clave en mi participacion en la ampliacion del Aeropuerto Jorge Chavez.' },
   ];
 
-  /* ── state: idx always 0‥team.length-1, gen increments on each nav to trigger animation ── */
-  var st = React.useState({ idx: 0, gen: 0, dir: 1 });
-  var slide = st[0];
-  var setSlide = st[1];
+  var stIdx = React.useState(0);
+  var idx = stIdx[0];
+  var setIdx = stIdx[1];
 
-  var stMob = React.useState(function() { return window.innerWidth <= 900; });
-  var isMob = stMob[0];
-  var setIsMob = stMob[1];
-
-  React.useEffect(function() {
-    function fn() { setIsMob(window.innerWidth <= 900); }
-    window.addEventListener('resize', fn);
-    return function() { window.removeEventListener('resize', fn); };
-  }, []);
-
-  /* auto‑advance every 12 s */
   React.useEffect(function() {
     var t = setInterval(function() {
-      setSlide(function(s) { return { idx: (s.idx + 1) % team.length, gen: s.gen + 1, dir: 1 }; });
-    }, 12000);
+      setIdx(function(i) { return (i + 1) % team.length; });
+    }, 10000);
     return function() { clearInterval(t); };
   }, []);
 
-  function goNext() {
-    setSlide(function(s) { return { idx: (s.idx + 1) % team.length, gen: s.gen + 1, dir: 1 }; });
-  }
-  function goPrev() {
-    setSlide(function(s) { return { idx: (s.idx - 1 + team.length) % team.length, gen: s.gen + 1, dir: -1 }; });
-  }
-  function goTo(i) {
-    setSlide(function(s) { return { idx: i, gen: s.gen + 1, dir: i >= s.idx ? 1 : -1 }; });
-  }
+  function goNext() { setIdx(function(i) { return (i + 1) % team.length; }); }
+  function goPrev() { setIdx(function(i) { return (i - 1 + team.length) % team.length; }); }
+  function goTo(i) { setIdx(i); }
 
-  /* build visible cards for this frame */
-  var perView = isMob ? 1 : 3;
-  var visible = [];
-  for (var j = 0; j < perView; j++) {
-    visible.push({ item: team[(slide.idx + j) % team.length], uid: slide.gen * 10 + j });
-  }
-
-  var btnShared = { width: 48, height: 48, borderRadius: '50%', border: 'none', cursor: 'pointer',
-    display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff',
-    position: 'absolute', top: '38%', transform: 'translateY(-50%)', zIndex: 10,
-    transition: 'opacity .2s, background .2s' };
-  var btnPrev = { width: btnShared.width, height: btnShared.height, borderRadius: btnShared.borderRadius,
-    border: '1.5px solid rgba(255,255,255,.18)', cursor: 'pointer', display: 'flex',
-    alignItems: 'center', justifyContent: 'center', color: '#fff', position: 'absolute',
-    top: '38%', transform: 'translateY(-50%)', zIndex: 10, transition: 'opacity .2s, background .2s',
-    left: 8, background: 'rgba(14,18,30,.82)', boxShadow: '0 4px 20px rgba(0,0,0,.5)',
-    backdropFilter: 'blur(8px)' };
-  var btnNext = { width: btnShared.width, height: btnShared.height, borderRadius: btnShared.borderRadius,
-    border: 'none', cursor: 'pointer', display: 'flex',
-    alignItems: 'center', justifyContent: 'center', color: '#fff', position: 'absolute',
-    top: '38%', transform: 'translateY(-50%)', zIndex: 10, transition: 'opacity .2s, background .2s',
-    right: 8, background: 'var(--grad-brand)', boxShadow: '0 4px 24px rgba(242,135,5,.5)' };
+  var item = team[idx];
 
   return (
     <section id=”luteachers” style={{ padding: '104px 0 80px', background: 'var(--ink-900)', color: '#fff', overflow: 'hidden' }}>
-
       <div className=”lt-wrap”>
         <div style={{ maxWidth: 760, marginBottom: 52 }}>
           <div className=”lt-overline” style={{ color: 'var(--orange-400)' }}>De las aulas al impacto</div>
           <h2 className=”lt-h1” style={{ color: '#fff', margin: '16px 0 0', fontSize: 46, letterSpacing: '-0.02em' }}>
-            Enseñar es una de las experiencias que más acelera el crecimiento profesional.
+            Enseniar es una de las experiencias que mas acelera el crecimiento profesional.
           </h2>
           <p className=”lt-body-lg” style={{ color: 'rgba(255,255,255,.6)', marginTop: 16, maxWidth: 600 }}>
             Muchos de nuestros Luteachers hoy destacan en empresas, universidades y organizaciones de primer nivel.
@@ -500,76 +460,62 @@ function Luteachers() {
         </div>
       </div>
 
-      {/* ── Card strip with overlaid arrows ── */}
-      <div style={{ position: 'relative', padding: '0 20px' }}>
+      <div className=”lt-wrap” style={{ maxWidth: 900, margin: '0 auto', position: 'relative' }}>
+        <div style={{ borderRadius: 20, overflow: 'hidden', background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.1)', display: 'flex' }}>
 
-        {/* ← prev */}
-        <button onClick={goPrev}
-          style={btnPrev}
-          onMouseEnter={function(e){ e.currentTarget.style.background='rgba(255,255,255,.14)'; }}
-          onMouseLeave={function(e){ e.currentTarget.style.background='rgba(14,18,30,.82)'; }}>
-          <Icon name=”chevron-left” size={22} stroke={2.5} />
-        </button>
+          <div style={{ position: 'relative', width: 320, minWidth: 320, flex: 'none' }}>
+            <img src={item.img} alt={item.name}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', minHeight: 400 }} />
+            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(to right,transparent 60%,rgba(0,0,0,.4))', pointerEvents: 'none' }}></div>
 
-        {/* cards */}
-        <div style={{ display: 'flex', gap: 16, padding: '0 44px' }}>
-          {visible.map(function(v) {
-            var item = v.item;
-            var cls = slide.dir >= 0 ? 'lt-sr' : 'lt-sl';
+            <button onClick={goPrev}
+              style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)',
+                width: 44, height: 44, borderRadius: '50%', border: '1.5px solid rgba(255,255,255,.3)',
+                background: 'rgba(14,18,30,.75)', backdropFilter: 'blur(8px)',
+                cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                color: '#fff', zIndex: 5 }}>
+              <Icon name=”chevron-left” size={20} stroke={2.5} />
+            </button>
+
+            <button onClick={goNext}
+              style={{ position: 'absolute', right: 12, top: '50%', transform: 'translateY(-50%)',
+                width: 44, height: 44, borderRadius: '50%', border: 'none',
+                background: 'var(--grad-brand)', boxShadow: '0 4px 18px rgba(242,135,5,.5)',
+                cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                color: '#fff', zIndex: 5 }}>
+              <Icon name=”chevron-right” size={20} stroke={2.5} />
+            </button>
+
+            <span style={{ position: 'absolute', top: 14, left: 14,
+              background: 'rgba(255,255,255,.14)', backdropFilter: 'blur(8px)',
+              border: '1px solid rgba(255,255,255,.2)', color: '#fff',
+              borderRadius: 99, padding: '4px 12px', fontSize: 12, fontWeight: 600 }}>
+              Luteacher - {item.years}
+            </span>
+          </div>
+
+          <div style={{ flex: 1, padding: '36px 36px 36px 32px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <h3 style={{ fontWeight: 700, fontSize: 22, color: '#fff', margin: '0 0 4px', letterSpacing: '-0.01em' }}>{item.name}</h3>
+            <div style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 4 }}>{item.carrera}</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 7, paddingBottom: 20, borderBottom: '1px solid rgba(255,255,255,.08)', marginBottom: 20 }}>
+              <Icon name=”briefcase” size={13} stroke={2} style={{ color: 'var(--orange-400)', flex: 'none' }} />
+              <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--orange-300)' }}>{item.ahora}</span>
+            </div>
+            <Icon name=”quote” size={16} stroke={1.5} style={{ color: 'var(--orange-400)', marginBottom: 10 }} />
+            <p style={{ fontSize: 15, lineHeight: 1.7, color: 'rgba(255,255,255,.72)', fontStyle: 'italic', margin: 0 }}>{item.quote}</p>
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 8, marginTop: 24 }}>
+          {team.map(function(_, i) {
             return (
-              <div key={v.uid} className={cls}
-                style={{ flex: 1, minWidth: 0, borderRadius: 20, overflow: 'hidden',
-                  background: 'rgba(255,255,255,.04)', border: '1px solid rgba(255,255,255,.08)',
-                  display: 'flex', flexDirection: 'column' }}>
-                <div style={{ position: 'relative', height: 340, overflow: 'hidden' }}>
-                  <img src={item.img} alt={item.name}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform .45s ease' }}
-                    onMouseEnter={function(e){ e.currentTarget.style.transform='scale(1.06)'; }}
-                    onMouseLeave={function(e){ e.currentTarget.style.transform='scale(1)'; }} />
-                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 55%)', pointerEvents: 'none' }}></div>
-                  <span style={{ position: 'absolute', top: 14, left: 14,
-                    background: 'rgba(255,255,255,.14)', backdropFilter: 'blur(8px)',
-                    border: '1px solid rgba(255,255,255,.2)', color: '#fff',
-                    borderRadius: 99, padding: '4px 12px', fontSize: 12, fontWeight: 600 }}>
-                    Luteacher · {item.years}
-                  </span>
-                </div>
-                <div style={{ padding: '20px 22px 24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                  <h3 style={{ fontWeight: 700, fontSize: 18, color: '#fff', margin: '0 0 3px', letterSpacing: '-0.01em' }}>{item.name}</h3>
-                  <div style={{ fontSize: 13, color: 'rgba(255,255,255,.38)', marginBottom: 12 }}>{item.carrera}</div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 7, paddingBottom: 14, borderBottom: '1px solid rgba(255,255,255,.07)', marginBottom: 14 }}>
-                    <Icon name=”briefcase” size={13} stroke={2} style={{ color: 'var(--orange-400)', flex: 'none' }} />
-                    <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--orange-300)' }}>{item.ahora}</span>
-                  </div>
-                  <div style={{ flex: 1 }}>
-                    <Icon name=”quote” size={14} stroke={1.5} style={{ color: 'var(--orange-400)', marginBottom: 6 }} />
-                    <p style={{ fontSize: 13, lineHeight: 1.65, color: 'rgba(255,255,255,.58)', fontStyle: 'italic', margin: 0 }}>”{item.quote}”</p>
-                  </div>
-                </div>
-              </div>
+              <button key={i} onClick={function() { goTo(i); }}
+                style={{ height: 8, width: i === idx ? 28 : 8, borderRadius: 99,
+                  background: i === idx ? 'var(--orange-400)' : 'rgba(255,255,255,.22)',
+                  border: 'none', cursor: 'pointer', padding: 0, transition: 'all .3s ease' }}></button>
             );
           })}
         </div>
-
-        {/* → next */}
-        <button onClick={goNext}
-          style={btnNext}
-          onMouseEnter={function(e){ e.currentTarget.style.opacity='.82'; }}
-          onMouseLeave={function(e){ e.currentTarget.style.opacity='1'; }}>
-          <Icon name=”chevron-right” size={22} stroke={2.5} />
-        </button>
-      </div>
-
-      {/* ── Dots ── */}
-      <div className=”lt-wrap” style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 28, gap: 8 }}>
-        {team.map(function(_, i) {
-          return (
-            <button key={i} onClick={function(){ goTo(i); }}
-              style={{ height: 8, width: i === slide.idx ? 28 : 8, borderRadius: 99,
-                background: i === slide.idx ? 'var(--orange-400)' : 'rgba(255,255,255,.22)',
-                border: 'none', cursor: 'pointer', padding: 0, transition: 'all .3s ease' }} />
-          );
-        })}
       </div>
     </section>
   );
