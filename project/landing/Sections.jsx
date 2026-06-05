@@ -46,7 +46,7 @@ function Steps() {
           </p>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
-          <div style={{ background: 'var(--paper)', border: '1px solid var(--sand-200)', borderRadius: 24, padding: '56px 60px', boxShadow: '0 2px 40px rgba(20,27,43,0.06)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'center' }}>
+          <div className="step-grid" style={{ background: 'var(--paper)', border: '1px solid var(--sand-200)', borderRadius: 24, padding: '56px 60px', boxShadow: '0 2px 40px rgba(20,27,43,0.06)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'center' }}>
             <div>
               <div style={{ fontSize: 96, fontWeight: 900, color: 'var(--sand-200)', letterSpacing: '-0.06em', lineHeight: 1, marginBottom: 24, fontFamily: 'var(--font-display,sans-serif)' }}>01</div>
               <h3 style={{ fontSize: 28, fontWeight: 700, letterSpacing: '-0.02em', margin: '0 0 16px', color: 'var(--ink-900)', lineHeight: 1.2 }}>Tú decides dónde generar oportunidades</h3>
@@ -73,7 +73,7 @@ function Steps() {
             </div>
           </div>
           {connector}
-          <div style={{ background: 'var(--ink-900)', borderRadius: 24, padding: '56px 60px', boxShadow: '0 8px 60px rgba(20,27,43,0.22)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'center' }}>
+          <div className="step-grid" style={{ background: 'var(--ink-900)', borderRadius: 24, padding: '56px 60px', boxShadow: '0 8px 60px rgba(20,27,43,0.22)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'center' }}>
             <div>
               <div style={{ fontSize: 96, fontWeight: 900, color: 'rgba(255,255,255,.06)', letterSpacing: '-0.06em', lineHeight: 1, marginBottom: 24, fontFamily: 'var(--font-display,sans-serif)' }}>02</div>
               <h3 style={{ fontSize: 28, fontWeight: 700, letterSpacing: '-0.02em', margin: '0 0 16px', color: '#fff', lineHeight: 1.2 }}>Conectamos a cada estudiante con el mentor adecuado</h3>
@@ -125,7 +125,7 @@ function Steps() {
             </div>
           </div>
           {connector}
-          <div style={{ background: 'var(--paper)', border: '1px solid var(--sand-200)', borderRadius: 24, padding: '56px 60px', boxShadow: '0 2px 40px rgba(20,27,43,0.06)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'start' }}>
+          <div className="step-grid" style={{ background: 'var(--paper)', border: '1px solid var(--sand-200)', borderRadius: 24, padding: '56px 60px', boxShadow: '0 2px 40px rgba(20,27,43,0.06)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 72, alignItems: 'start' }}>
             <div>
               <div style={{ fontSize: 96, fontWeight: 900, color: 'var(--sand-200)', letterSpacing: '-0.06em', lineHeight: 1, marginBottom: 24, fontFamily: 'var(--font-display,sans-serif)' }}>03</div>
               <h3 style={{ fontSize: 28, fontWeight: 700, letterSpacing: '-0.02em', margin: '0 0 16px', color: 'var(--ink-900)', lineHeight: 1.2 }}>Mide y demuestra el impacto</h3>
@@ -232,7 +232,7 @@ function Cursos() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
+        <div className="cursos-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
           {CURSOS.map(([name, img, sub, desc]) => (
             <div key={name} className="card" style={{ padding: 24, display: 'flex', flexDirection: 'column' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 14 }}>
@@ -314,7 +314,7 @@ function Testimonials() {
           <h2 className="lt-h1" style={{ margin: '12px 0 0' }}>La tranquilidad se nota en casa.</h2>
           <p className="lt-body-lg" style={{ marginTop: 14, color: 'var(--ink-500)' }}>Porque cuando los hijos entienden, ganan confianza. Y cuando los padres ven que van por buen camino, sienten un alivio que no tiene precio.</p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }}>
+        <div className="testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }}>
           {t.map(function(item, idx) {
             return (
               <div key={idx} className="card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
@@ -380,7 +380,7 @@ function FinalCTA() {
             );
           })}
         </div>
-        <div style={{ borderTop: '1px solid rgba(255,255,255,.2)', paddingTop: 52, display: 'grid', gridTemplateColumns: '1.6fr 1fr 1fr 1fr', gap: 40, textAlign: 'left' }}>
+        <div className="footer-cols" style={{ borderTop: '1px solid rgba(255,255,255,.2)', paddingTop: 52, display: 'grid', gridTemplateColumns: '1.6fr 1fr 1fr 1fr', gap: 40, textAlign: 'left' }}>
           <div>
             <p style={{ font: 'var(--body-sm)', color: 'rgba(255,255,255,.7)', maxWidth: 260, margin: 0 }}>
               Transformamos oportunidades en impacto. Educación para colaboradores, becarios y comunidades, impulsada por universitarios destacados.
@@ -403,7 +403,7 @@ function FinalCTA() {
             );
           })}
         </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 44, paddingTop: 22, borderTop: '1px solid rgba(255,255,255,.2)', font: 'var(--caption)', color: 'rgba(255,255,255,.55)' }}>
+        <div className="footer-bottom" style={{ display: 'flex', justifyContent: 'space-between', marginTop: 44, paddingTop: 22, borderTop: '1px solid rgba(255,255,255,.2)', font: 'var(--caption)', color: 'rgba(255,255,255,.55)' }}>
           <span>© 2026 Luteach. Transformando oportunidades en impacto.</span>
           <span>Lima, Perú</span>
         </div>

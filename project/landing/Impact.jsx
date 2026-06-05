@@ -12,7 +12,7 @@ function Desafios() {
   return (
     <section id="desafios" style={{ padding: '104px 0', background: 'var(--ink-900)', color: '#fff' }}>
       <div className="lt-wrap">
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center', marginBottom: 72 }}>
+        <div className="desafios-header" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center', marginBottom: 72 }}>
           <div>
             <div className="lt-overline" style={{ color: 'var(--orange-400)', marginBottom: 16 }}>El desafío</div>
             <h2 className="lt-h1" style={{ color: '#fff', margin: 0, fontSize: 46, letterSpacing: '-0.02em' }}>
@@ -32,7 +32,7 @@ function Desafios() {
             </div>
           </div>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderTop: '1px solid rgba(255,255,255,.1)' }}>
+        <div className="desafios-stats" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderTop: '1px solid rgba(255,255,255,.1)' }}>
           {stats.map(function(s, i) {
             return (
               <div key={s.label} style={{ padding: '40px 32px', borderRight: i < 3 ? '1px solid rgba(255,255,255,.08)' : 'none' }}>
@@ -74,7 +74,7 @@ function ElPuente() {
         </div>
 
         {/* ── 3 Detailed Cards ── */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr auto 1fr', gap: 0, alignItems: 'stretch' }}>
+        <div className="elpuente-cards" style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr auto 1fr', gap: 0, alignItems: 'stretch' }}>
 
           {/* Organizaciones */}
           <div style={{ background: 'rgba(255,255,255,0.04)', borderRadius: 'var(--r-xl)', border: '1px solid rgba(255,255,255,0.09)', padding: '32px 28px', display: 'flex', flexDirection: 'column' }}>
@@ -103,7 +103,7 @@ function ElPuente() {
           </div>
 
           {/* Connector → financia */}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '0 18px', gap: 12 }}>
+          <div className="elpuente-connector" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '0 18px', gap: 12 }}>
             <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'rgba(242,135,5,0.14)', border: '1.5px solid rgba(242,135,5,0.45)', display: 'grid', placeItems: 'center', boxShadow: '0 0 20px rgba(242,135,5,0.28)' }}>
               <Icon name="arrow-right" size={24} stroke={2.5} style={{ color: 'var(--orange-400)' }} />
             </div>
@@ -137,7 +137,7 @@ function ElPuente() {
           </div>
 
           {/* Connector ← acompaña */}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '0 18px', gap: 12 }}>
+          <div className="elpuente-connector" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '0 18px', gap: 12 }}>
             <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'rgba(242,135,5,0.14)', border: '1.5px solid rgba(242,135,5,0.45)', display: 'grid', placeItems: 'center', boxShadow: '0 0 20px rgba(242,135,5,0.28)' }}>
               <Icon name="arrow-left" size={24} stroke={2.5} style={{ color: 'var(--orange-400)' }} />
             </div>
@@ -293,7 +293,7 @@ function CasosImpacto() {
             Generamos bienestar para las familias, oportunidades para la próxima generación y desarrollo para las comunidades donde construimos futuro.
           </p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }}>
+        <div className="casos-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }}>
           {casos.map(function(c) {
             return (
               <div key={c.title} className="card" style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
@@ -333,7 +333,7 @@ function ODS() {
   return (
     <section style={{ padding: '104px 0', background: 'var(--ink-900)', color: '#fff' }}>
       <div className="lt-wrap">
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center', marginBottom: 64 }}>
+        <div className="ods-header" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center', marginBottom: 64 }}>
           <div>
             <div className="lt-overline" style={{ color: 'var(--orange-400)' }}>ESG y sostenibilidad</div>
             <h2 className="lt-h1" style={{ color: '#fff', margin: '16px 0 0', fontSize: 46, letterSpacing: '-0.02em' }}>
@@ -344,7 +344,7 @@ function ODS() {
             Ayudamos a empresas, fundaciones y organizaciones a convertir la educación en una herramienta de bienestar, desarrollo territorial y creación de valor compartido.
           </p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 16, marginBottom: 24 }}>
+        <div className="ods-goals" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 16, marginBottom: 24 }}>
           {goals.map(function(g) {
             return (
               <div key={g.num} style={{ background: 'rgba(255,255,255,.05)', borderRadius: 'var(--r-xl)', border: '1px solid rgba(255,255,255,.1)', padding: '28px 22px', display: 'flex', flexDirection: 'column' }}>
@@ -360,7 +360,7 @@ function ODS() {
             );
           })}
         </div>
-        <div style={{ background: 'rgba(255,255,255,.06)', borderRadius: 'var(--r-xl)', border: '1px solid rgba(255,255,255,.1)', padding: '32px 36px', display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 40, alignItems: 'center' }}>
+        <div className="ods-bottom" style={{ background: 'rgba(255,255,255,.06)', borderRadius: 'var(--r-xl)', border: '1px solid rgba(255,255,255,.1)', padding: '32px 36px', display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 40, alignItems: 'center' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
               <Icon name="bar-chart-2" size={22} stroke={1.75} style={{ color: 'var(--orange-400)' }} />
@@ -388,13 +388,13 @@ function QuienesSon() {
   return (
     <section id="quienes" style={{ padding: '72px 0 52px', background: 'var(--canvas-2)', borderTop: '1px solid var(--sand-200)' }}>
       <div className="lt-wrap">
-        <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 56, alignItems: 'center' }}>
+        <div className="quienes-grid" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 56, alignItems: 'center' }}>
           <div>
             <div className="lt-overline">Nuestros Luteachers</div>
             <h2 className="lt-h1" style={{ margin: '14px 0 24px', fontSize: 40, letterSpacing: '-0.02em' }}>
               Los mejores estudiantes enseñan hoy. Los mejores profesionales lideran mañana.
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <div className="quienes-traits" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
               {rasgos.map(function(item) {
                 var ic = item[0], t = item[1];
                 return (

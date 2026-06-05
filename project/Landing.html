@@ -39,6 +39,80 @@
   .course-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--orange-300); }
   image-slot { display:block; }
   @media (max-width: 960px){ .nav-links{ display:none !important; } }
+
+  /* ═══════════════════════════════════════
+     RESPONSIVE — MOBILE (≤ 768px)
+  ═══════════════════════════════════════ */
+  @media (max-width: 768px) {
+
+    /* ── General ── */
+    .lt-wrap { padding-left: 20px !important; padding-right: 20px !important; }
+    section  { padding-top: 64px !important; padding-bottom: 64px !important; }
+
+    /* ── Nav: hide ghost buttons, keep CTA ── */
+    header .btn-ghost { display: none !important; }
+    header .lt-wrap   { gap: 12px !important; }
+
+    /* ── Typography ── */
+    .lt-display { font-size: 34px !important; line-height: 1.1 !important; }
+    .lt-h1      { font-size: 26px !important; }
+    .lt-h2      { font-size: 22px !important; }
+    #como h2, footer h2 { font-size: 30px !important; }
+
+    /* ── Hero ── */
+    .hero-grid  { grid-template-columns: 1fr !important; padding: 36px 20px 48px !important; gap: 28px !important; }
+    .hero-visual { height: 280px !important; }
+    .hero-visual > div > img { height: 220px !important; }
+    .hero-visual > div:last-child { position: relative !important; left: 0 !important; bottom: -8px !important; }
+
+    /* ── Impact Band ── */
+    .impact-grid { grid-template-columns: 1fr 1fr !important; }
+    .impact-grid > div { border-right: none !important; padding-bottom: 24px !important; margin-bottom: 24px !important; border-bottom: 1px solid rgba(255,255,255,.08) !important; }
+    .impact-grid > div:nth-child(3), .impact-grid > div:nth-child(4) { margin-bottom: 0 !important; padding-bottom: 0 !important; border-bottom: none !important; }
+
+    /* ── Benefits ── */
+    .benefits-grid { grid-template-columns: 1fr 1fr !important; gap: 14px !important; }
+
+    /* ── Desafios ── */
+    .desafios-header { grid-template-columns: 1fr !important; gap: 24px !important; margin-bottom: 40px !important; }
+    .desafios-stats  { grid-template-columns: 1fr 1fr !important; }
+    .desafios-stats > div { border-right: none !important; }
+
+    /* ── El Puente cards ── */
+    .elpuente-cards { grid-template-columns: 1fr !important; }
+    .elpuente-connector { flex-direction: row !important; padding: 14px 0 !important; justify-content: center !important; }
+    .elpuente-connector i[data-lucide="arrow-right"] { transform: rotate(90deg) !important; }
+    .elpuente-connector i[data-lucide="arrow-left"]  { transform: rotate(-90deg) !important; }
+    .elpuente-connector span { writing-mode: horizontal-tb !important; }
+
+    /* ── Casos de impacto ── */
+    .casos-grid { grid-template-columns: 1fr !important; }
+
+    /* ── ODS ── */
+    .ods-header { grid-template-columns: 1fr !important; gap: 20px !important; margin-bottom: 36px !important; }
+    .ods-goals  { grid-template-columns: 1fr 1fr !important; }
+    .ods-bottom { grid-template-columns: 1fr !important; padding: 24px 20px !important; gap: 12px !important; }
+
+    /* ── Quiénes son ── */
+    .quienes-grid   { grid-template-columns: 1fr !important; gap: 32px !important; }
+    .quienes-traits { grid-template-columns: 1fr !important; }
+
+    /* ── Steps ── */
+    .step-grid { grid-template-columns: 1fr !important; padding: 36px 24px !important; gap: 32px !important; }
+
+    /* ── Cursos ── */
+    .cursos-grid { grid-template-columns: 1fr !important; }
+
+    /* ── Testimonials ── */
+    .testimonials-grid { grid-template-columns: 1fr !important; }
+
+    /* ── Footer / CTA ── */
+    footer .lt-wrap { padding-top: 56px !important; padding-bottom: 40px !important; text-align: center !important; }
+    footer .lt-wrap > div[style*="gap: 14"] { justify-content: center !important; }
+    .footer-cols   { grid-template-columns: 1fr 1fr !important; gap: 24px !important; }
+    .footer-bottom { flex-direction: column !important; gap: 6px !important; text-align: center !important; align-items: center !important; }
+
+  }
 </style>
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>

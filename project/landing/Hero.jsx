@@ -47,7 +47,7 @@ function Hero({ onScrollTo }) {
     <section id="top" style={{ position: 'relative', overflow: 'hidden', background: 'var(--grad-hero)', paddingTop: 72 }}>
       <div style={{ position: 'absolute', top: -140, right: -80, width: 520, height: 520, borderRadius: '50%', background: 'var(--grad-trust)', opacity: .24, filter: 'blur(90px)', pointerEvents: 'none' }}></div>
       <div style={{ position: 'absolute', bottom: -160, left: -120, width: 440, height: 440, borderRadius: '50%', background: 'var(--grad-brand)', opacity: .14, filter: 'blur(90px)', pointerEvents: 'none' }}></div>
-      <div className="lt-wrap" style={{ display: 'grid', gridTemplateColumns: '1.05fr 1.02fr', gap: 48, alignItems: 'center', padding: '64px 32px 80px', position: 'relative' }}>
+      <div className="lt-wrap hero-grid" style={{ display: 'grid', gridTemplateColumns: '1.05fr 1.02fr', gap: 48, alignItems: 'center', padding: '64px 32px 80px', position: 'relative' }}>
         <div className="fade-up">
           <span className="badge" style={{ background: 'rgba(255,255,255,.1)', color: '#fff', border: '1px solid rgba(255,255,255,.18)' }}>
             <Icon name="building-2" size={15} stroke={2} /> Bienestar para tus colaboradores y las comunidades donde operas
@@ -74,7 +74,7 @@ function Hero({ onScrollTo }) {
 
 function HeroVisual() {
   return (
-    <div className="fade-up" style={{ position: 'relative', animationDelay: '.08s', height: 480 }}>
+    <div className="fade-up hero-visual" style={{ position: 'relative', animationDelay: '.08s', height: 480 }}>
       {/* Main: virtual tutoring session */}
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, borderRadius: 'var(--r-lg)', overflow: 'hidden', boxShadow: '0 28px 64px rgba(0,0,0,.5)', border: '1px solid rgba(255,255,255,.12)', background: 'var(--slate-800)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '9px 13px', background: 'var(--slate-900)' }}>
@@ -141,7 +141,7 @@ function ImpactBand() {
   ];
   return (
     <section style={{ background: 'var(--slate-900)', padding: '64px 0', borderTop: '1px solid rgba(255,255,255,.08)' }}>
-      <div className="lt-wrap" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 0 }}>
+      <div className="lt-wrap impact-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 0 }}>
         {stats.map((s, i) => (
           <div key={s.label} style={{ padding: '0 28px', borderRight: i < 3 ? '1px solid rgba(255,255,255,.1)' : 'none' }}>
             <div style={{ width: 36, height: 3, background: 'var(--grad-brand)', borderRadius: 2, marginBottom: 16 }} />
@@ -187,7 +187,7 @@ function Benefits() {
           <h2 className="lt-h1" style={{ margin: '16px 0 0', fontSize: 46, letterSpacing: '-0.02em' }}>Más que tutorías, construimos oportunidades.</h2>
           <p className="lt-body-lg" style={{ marginTop: 16, maxWidth: 580, color: 'var(--ink-500)' }}>Ayudamos a empresas y organizaciones a transformar su inversión en educación en bienestar para las familias, desarrollo del talento joven e impacto medible.</p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 20 }}>
+        <div className="benefits-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 20 }}>
           {items.map(([ic, t, d]) => (
             <div key={t} className="card" style={{ padding: 28, display: 'flex', flexDirection: 'column' }}>
               <div className="cat-tile" style={{ background: 'var(--grad-brand)', width: 48, height: 48 }}><Icon name={ic} size={24} stroke={2} /></div>
